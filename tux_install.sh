@@ -19,15 +19,12 @@ sudo chmod 600 /tmp/dumps
 [ ! -d /home/SteamLibrary ] && sudo mkdir /home/SteamLibrary
 sudo chown -R $USER:$USER /home/SteamLibrary
 sudo chmod -R 777 /home/SteamLibrary
-###AIMTUX###
+###AIMTUX FIX###
 [ ! -d /home/at ] && sudo mkdir /home/at
 sudo chmod 777 /home/at
 [ ! -d /home/$USER/.config/AimTux ] && sudo mkdir /home/$USER/.config/AimTux
 sudo chown -R $USER:$USER /home/$USER/.config/AimTux
 sudo chmod -R 777 /home/$USER/.config/AimTux
-###CLEAN INSTALL###
-cd /tmp
-[ -d /tmp/AimTux* ] && sudo rm -rf AimTux*
 ###MENU###
 function menu {
 clear
@@ -66,8 +63,10 @@ while [ $? -ne 1 ]
             ;;
      1)
             echo "Compiling AimTux new version..."
+            [ -d /tmp/AimTux* ] && sudo rm -rf AimTux*
             [ -f /tmp/master* ] && sudo rm master*
             [ -d /home/at/am_new ] && sudo rm -rf /home/at/am_new
+            cd /tmp
             git clone https://github.com/McSwaggens/AimTux
             mv /tmp/AimTux /home/at/am_new
             cd /home/at/am_new
@@ -77,8 +76,10 @@ while [ $? -ne 1 ]
             ;;
      2)
             echo "Compiling AimTux stable version..."
+            [ -d /tmp/AimTux* ] && sudo rm -rf AimTux*
             [ -f /tmp/v1.0* ] && sudo rm v1.0*
             [ -d /home/at/am_stable ] && sudo rm -rf /home/at/am_stable
+            cd /tmp
             wget https://github.com/McSwaggens/AimTux/archive/v1.0.zip && unzip v1.0.zip
             mv /tmp/AimTux-1.0 /home/at/am_stable
             cd /home/at/am_stable
@@ -88,8 +89,10 @@ while [ $? -ne 1 ]
             ;;
      3)
             echo "Compiling AimTux FACEIT version..."
+            [ -d /tmp/AimTux* ] && sudo rm -rf AimTux*
             [ -f /tmp/faceit* ] && sudo rm faceit*
             [ -d /home/at/am_faceit ] && sudo rm -rf /home/at/am_faceit
+            cd /tmp
             wget https://github.com/McSwaggens/AimTux/archive/faceit.zip && unzip faceit.zip
             mv /tmp/AimTux-faceit /home/at/am_faceit
             cd /home/at/am_faceit
@@ -99,7 +102,6 @@ while [ $? -ne 1 ]
             ;;
      4)
             echo "Install Configs..."
-            [ -d /home/scripts ] && sudo chmod -R 777 /home/scripts
             [ ! -d /home/$USER/.config/AimTux ] && sudo mkdir /home/$USER/.config/AimTux
             sudo chown -R $USER:$USER /home/$USER/.config/AimTux
             sudo chmod -R 777 /home/$USER/.config/AimTux
