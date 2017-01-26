@@ -31,18 +31,22 @@ sudo chmod -R 777 /home/$USER/.config/AimTux
 cd /tmp
 [ -d /tmp/AimTux* ] && sudo rm -rf AimTux*
 ###CASE###
-printf 'Select the version AimTux to install! 1)New; 2)Stable; 3)Faceit; 4)Install configs; 5)Cleaning configs; 6)Cleaning AimTux : '
+clear
+printf 'Select the version AimTux to install or other function! 
+AimTux menu: 1)New; 2)Stable; 3)Faceit; 
+Config menu: 4)Install configs; 5)Clear configs;
+Other menu:  6)Clear AimTux;
 read BRANCH
 case $BRANCH in
      1)
           echo "Compiling AimTux default..."
-          [ -d /home/at/am_new ] && sudo rm -rf /home/at/am_new
-          sudo rm master.*
-          git clone https://github.com/McSwaggens/AimTux
-          mv /tmp/AimTux /home/at/am_new
-          cd /home/at/am_new
-          cmake .
-          make -j 4
+            [ -d /home/at/am_new ] && sudo rm -rf /home/at/am_new
+            sudo rm master.*
+            git clone https://github.com/McSwaggens/AimTux
+            mv /tmp/AimTux /home/at/am_new
+            cd /home/at/am_new
+            cmake .
+            make -j 4
           echo "Finished compiling AimTux!"
           ;;
      2)
@@ -50,13 +54,13 @@ case $BRANCH in
           ;;
      3)
           echo "Compiling AimTux for FACEIT..."
-          [ -f /tmp/faceit* ] && sudo rm faceit*
-          [ -d /home/at/am_faceit ] && sudo rm -rf /home/at/am_faceit
-          wget https://github.com/McSwaggens/AimTux/archive/faceit.zip && unzip faceit.zip
-          mv /tmp/AimTux-faceit /home/at/am_faceit
-          cd /home/at/am_faceit
-          cmake .
-          make -j 4
+            [ -f /tmp/faceit* ] && sudo rm faceit*
+            [ -d /home/at/am_faceit ] && sudo rm -rf /home/at/am_faceit
+            wget https://github.com/McSwaggens/AimTux/archive/faceit.zip && unzip faceit.zip
+            mv /tmp/AimTux-faceit /home/at/am_faceit
+            cd /home/at/am_faceit
+            cmake .
+            make -j 4
           echo "Finished compiling AimTux for FACEIT!"
           ;;
      4)
@@ -72,7 +76,7 @@ case $BRANCH in
             [ -d /tmp/atconfigs ] && sudo rm -rf atconfigs
             git clone https://github.com/McSwaggens/atconfigs
             sudo cp -ar /tmp/atconfigs/configs/* /home/$USER/.config/AimTux/
-            echo "Done! If CSGO is already open, press the reload button!"
+          echo "Done! If CSGO is already open, press the reload button!"
           ;;
      5)
           echo ""
