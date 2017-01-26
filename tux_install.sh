@@ -43,10 +43,10 @@ case $BRANCH in
           cd /home/at/am_new
           cmake .
           make -j 4
-          echo "FINISH"
+          echo "Finished compiling AimTux!"
           ;;
      2)
-          echo "Эй! Это мой любимый серверный дистрибутив!"
+          echo ""
           ;;
      3)
           echo "Compiling AimTux for FACEIT..."
@@ -57,10 +57,22 @@ case $BRANCH in
           cd /home/at/am_faceit
           cmake .
           make -j 4
-          echo "Finished compiling AimTux for FACEIT"
+          echo "Finished compiling AimTux for FACEIT!"
           ;;
      4)
-          echo ""
+          echo "Install Configs..."
+            [ -d /home/scripts ] && sudo chmod -R 777 /home/scripts
+            [ ! -d /home/$USER/.config/AimTux ] && sudo mkdir /home/$USER/.config/AimTux
+            sudo chown -R $USER:$USER /home/$USER/.config/AimTux
+            sudo chmod -R 777 /home/$USER/.config/AimTux
+            cd /tmp
+            [ -d /tmp/ATCFG ] && sudo rm -rf ATCFG
+            git clone https://github.com/voltagegg/ATCFG
+            sudo cp -ar /tmp/ATCFG/configs/* /home/$USER/.config/AimTux/
+            [ -d /tmp/atconfigs ] && sudo rm -rf atconfigs
+            git clone https://github.com/McSwaggens/atconfigs
+            sudo cp -ar /tmp/atconfigs/configs/* /home/$USER/.config/AimTux/
+            echo "Done! If CSGO is already open, press the reload button!"
           ;;
      5)
           echo ""
