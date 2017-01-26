@@ -50,8 +50,8 @@ case $BRANCH in
           ;;
      3)
           echo "Compiling AimTux for FACEIT..."
+          [ -f /tmp/faceit* ] && sudo rm faceit*
           [ -d /home/at/am_faceit ] && sudo rm -rf /home/at/am_faceit
-          sudo rm faceit.*
           wget https://github.com/McSwaggens/AimTux/archive/faceit.zip && unzip faceit.zip
           mv /tmp/AimTux-faceit /home/at/am_faceit
           cd /home/at/am_faceit
@@ -60,13 +60,13 @@ case $BRANCH in
           echo "Finished compiling AimTux for FACEIT"
           ;;
      4)
-          echo "Эй! Это мой любимый серверный дистрибутив!"
+          echo ""
           ;;
      5)
-          echo "Please enter a number!"
+          echo ""
           ;;
      6)
-          echo "Эй! Это мой любимый серверный дистрибутив!"
+          echo ""
           ;;
      *)
           echo "Please enter a number!"
