@@ -3,17 +3,15 @@
 ###UPGRADE OS & DEL STEAM-RUNTIME###
 if [ -e /etc/arch-release ]; then 
     sudo pacman -Syu
-    sudo pacman -S base-devel cmake gdb git sdl2 xdotool
 fi
 if [ -e /etc/debian_version ]; then
-    sudo apt-get update
-    sudo apt-get install -y cmake g++ gdb git libsdl2-dev zlib1g-dev libxdo-dev
-        rm ~/.steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libstdc++.so.*
-        rm ~/.steam/ubuntu12_32/steam-runtime/i386/lib/i386-linux-gnu/libgcc_s.so.*
-        rm ~/.steam/ubuntu12_32/steam-runtime/amd64/lib/x86_64-linux-gnu/libgcc_s.so.*
-        rm ~/.steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libstdc++.so.*
-        rm ~/.steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libxcb.so.*
+    rm ~/.steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libstdc++.so.*
+    rm ~/.steam/ubuntu12_32/steam-runtime/i386/lib/i386-linux-gnu/libgcc_s.so.*
+    rm ~/.steam/ubuntu12_32/steam-runtime/amd64/lib/x86_64-linux-gnu/libgcc_s.so.*
+    rm ~/.steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libstdc++.so.*
+    rm ~/.steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libxcb.so.*
 fi
+clear
 ###STEAM FIX###
 [ ! -d /tmp/dumps ] && sudo mkdir /tmp/dumps
 sudo rm -rf /tmp/dumps/*
@@ -30,30 +28,66 @@ sudo chmod -R 777 /home/$USER/.config/AimTux
 ###CLEAN INSTALL###
 cd /tmp
 [ -d /tmp/AimTux* ] && sudo rm -rf AimTux*
-###CASE###
+###MENU###
+function menu {
 clear
-printf 'Select the version AimTux to install or other function! 
-AimTux menu: 1)New; 2)Stable; 3)Faceit; 
-Config menu: 4)Install configs; 5)Clear configs;
-Other menu:  6)Clear AimTux;
-read BRANCH
-case $BRANCH in
+echo
+echo -e "\t\t\tМеню скрипта\n"
+echo -e "\t1.  Установка AimTux(new) новая версия"
+echo -e "\t2.  Установка AimTux(stable) старая версия"
+echo -e "\t3.  Установка AimTux(faceit) версия для FACEIT"
+echo -e "\t4.  Установка конфигов AimTux"
+echo -e "\t5.  Удаление конфигов AimTux"
+echo -e "\t6.  Очистка каталога(/home/at/) от AimTux"
+echo -e "\t7.  Полное обновление системы Ubuntu/Debian"
+echo -e "\t8.  Other tweaks for home"
+echo -e "\t9.  Fixed dumps Steam folder"
+echo -e "\t10. Deletion Steam folder"
+echo -e "\t0. Установка необходимых пакетов(для ПЕРВИЧНОЙ сборки)"
+echo -e "\tq. Выход\n"
+echo -en "\t\tВведите номер раздела: "
+read -n 1 option
+}
+while [ $? -ne 1 ]
+    do
+        menu
+        case $option in
+     q)
+            break 
+            ;;
+     0)
+            if [ -e /etc/arch-release ]; then 
+                 sudo pacman -Syu
+                 sudo pacman -S base-devel cmake gdb git sdl2 xdotool
+            if [ -e /etc/debian_version ]; then
+                sudo apt-get update
+                sudo apt-get install -y cmake g++ gdb git libsdl2-dev zlib1g-dev libxdo-dev
+            echo "Finished pre-install packages!"
+            ;;
      1)
-          echo "Compiling AimTux default..."
+            echo "Compiling AimTux new version..."
+            [ -f /tmp/master* ] && sudo rm master*
             [ -d /home/at/am_new ] && sudo rm -rf /home/at/am_new
-            sudo rm master.*
             git clone https://github.com/McSwaggens/AimTux
             mv /tmp/AimTux /home/at/am_new
             cd /home/at/am_new
             cmake .
             make -j 4
-          echo "Finished compiling AimTux!"
-          ;;
+            echo "Finished compiling AimTux new version!"
+            ;;
      2)
-          echo ""
-          ;;
+            echo "Compiling AimTux stable version..."
+            [ -f /tmp/v1.0* ] && sudo rm v1.0*
+            [ -d /home/at/am_stable ] && sudo rm -rf /home/at/am_stable
+            wget https://github.com/McSwaggens/AimTux/archive/v1.0.zip && unzip v1.0.zip
+            mv /tmp/AimTux-1.0 /home/at/am_stable
+            cd /home/at/am_stable
+            cmake .
+            make -j 4
+            echo "Finished compiling AimTux stable version!"
+            ;;
      3)
-          echo "Compiling AimTux for FACEIT..."
+            echo "Compiling AimTux FACEIT version..."
             [ -f /tmp/faceit* ] && sudo rm faceit*
             [ -d /home/at/am_faceit ] && sudo rm -rf /home/at/am_faceit
             wget https://github.com/McSwaggens/AimTux/archive/faceit.zip && unzip faceit.zip
@@ -61,10 +95,10 @@ case $BRANCH in
             cd /home/at/am_faceit
             cmake .
             make -j 4
-          echo "Finished compiling AimTux for FACEIT!"
-          ;;
+            echo "Finished compiling AimTux FACEIT version!"
+            ;;
      4)
-          echo "Install Configs..."
+            echo "Install Configs..."
             [ -d /home/scripts ] && sudo chmod -R 777 /home/scripts
             [ ! -d /home/$USER/.config/AimTux ] && sudo mkdir /home/$USER/.config/AimTux
             sudo chown -R $USER:$USER /home/$USER/.config/AimTux
@@ -76,16 +110,40 @@ case $BRANCH in
             [ -d /tmp/atconfigs ] && sudo rm -rf atconfigs
             git clone https://github.com/McSwaggens/atconfigs
             sudo cp -ar /tmp/atconfigs/configs/* /home/$USER/.config/AimTux/
-          echo "Done! If CSGO is already open, press the reload button!"
-          ;;
+            echo "Finished install configs!"
+            ;;
      5)
-          echo ""
-          ;;
+            sudo rm -rf /home/$USER/.config/AimTux/*
+            echo "Finished deletion configs!"
+            ;;
      6)
-          echo ""
-          ;;
+            sudo rm -rf /home/at/*
+            echo "Finished deletion AimTux!"
+            ;;
+     7)
+            sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -fy && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean
+            echo "Finished upgrade system!"
+            ;;
+     8)
+            [ ! -d /home/SOFT ] && sudo mkdir /home/SOFT
+            sudo chmod -R 777 /home/SOFT
+            echo "Finished other tweaks!"
+            ;;
+     9)
+            [ ! -d /tmp/dumps ] && sudo mkdir /tmp/dumps
+            sudo rm -rf /tmp/dumps/*
+            sudo chmod 600 /tmp/dumps
+            echo "Finished fixed dumps Steam!"
+            ;;
+     10)
+            sudo rm -rf /home/$USER/Steam && sudo rm -rf /home/$USER/.steam
+            echo "Finished deletion Steam folders!"
+            ;;
      *)
-          echo "Please enter a number!"
-          ;;
-esac
-echo "Script finished the job!"
+            echo -en "\n\t\tНужно выбрать раздел!"
+            ;;
+        esac
+    echo -en "\n\n\t\tНажмите любую клавишу для продолжения"
+    read -n 1 line
+    done
+clear
