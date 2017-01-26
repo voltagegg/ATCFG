@@ -11,8 +11,8 @@ function arch_upgrade {
 }
 function deb_upgrade {
     if [ -e "/etc/debian-version" ]; then
-    sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -fy &&
-    sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean
+        sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -fy &&
+        sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean
     fi
 }
 function del_steamruntime {
@@ -82,10 +82,10 @@ while [ $? -ne 1 ]
             ;;
      0)
             if [ -e "/etc/manjaro-release" ]; then
-            sudo pacman -Syu base-devel cmake gdb git sdl2 xdotool
+                sudo pacman -Syu base-devel cmake gdb git sdl2 xdotool
             fi
             if [ -e "/etc/arch-release" ]; then
-            sudo pacman -Syu base-devel cmake gdb git sdl2 xdotool
+                sudo pacman -Syu base-devel cmake gdb git sdl2 xdotool
             fi
             if [ -e "/etc/debian-version" ]; then
                 sudo apt-get update
