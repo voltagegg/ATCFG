@@ -1,49 +1,77 @@
 #!/bin/bash
 ##DATE=`/bin/date '+%d%m'`
 ###UPGRADE OS & DEL STEAM-RUNTIME###
-if [ -e /etc/arch-release ]; then 
-    sudo pacman -Syu
-fi
-if [ -e /etc/debian_version ]; then
-    rm ~/.steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libstdc++.so.*
-    rm ~/.steam/ubuntu12_32/steam-runtime/i386/lib/i386-linux-gnu/libgcc_s.so.*
-    rm ~/.steam/ubuntu12_32/steam-runtime/amd64/lib/x86_64-linux-gnu/libgcc_s.so.*
-    rm ~/.steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libstdc++.so.*
-    rm ~/.steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libxcb.so.*
-fi
-clear
+function arch_upgrade {
+    if [ -e "/etc/manjaro-release" ]; then
+        sudo pacman -Syu
+    fi
+    if [ -e "/etc/arch-release" ]; then
+        sudo pacman -Syu
+    fi
+}
+function deb_upgrade {
+    if [ -e "/etc/debian-version" ]; then
+    sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -fy &&
+    sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean
+    fi
+}
+function del_steamruntime {
+    if [ -e "/etc/debian-version" ]; then
+        rm ~/.steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libstdc++.so.*
+        rm ~/.steam/ubuntu12_32/steam-runtime/i386/lib/i386-linux-gnu/libgcc_s.so.*
+        rm ~/.steam/ubuntu12_32/steam-runtime/amd64/lib/x86_64-linux-gnu/libgcc_s.so.*
+        rm ~/.steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libstdc++.so.*
+        rm ~/.steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libxcb.so.*
+    fi
+}
 ###STEAM FIX###
-[ ! -d /tmp/dumps ] && sudo mkdir /tmp/dumps
-sudo rm -rf /tmp/dumps/*
-sudo chmod 600 /tmp/dumps
-[ ! -d /home/SteamLibrary ] && sudo mkdir /home/SteamLibrary
-sudo chown -R $USER:$USER /home/SteamLibrary
-sudo chmod -R 777 /home/SteamLibrary
+function fix_dumps {
+    [ ! -d /tmp/dumps ] && sudo mkdir /tmp/dumps
+    sudo rm -rf /tmp/dumps/*
+    sudo chmod 600 /tmp/dumps
+}
+function fix_library {
+    [ ! -d /home/SteamLibrary ] && sudo mkdir /home/SteamLibrary
+    sudo chown -R $USER:$USER /home/SteamLibrary
+    sudo chmod -R 777 /home/SteamLibrary
+}
 ###AIMTUX FIX###
-[ ! -d /home/at ] && sudo mkdir /home/at
-sudo chmod 777 /home/at
-[ ! -d /home/$USER/.config/AimTux ] && sudo mkdir /home/$USER/.config/AimTux
-sudo chown -R $USER:$USER /home/$USER/.config/AimTux
-sudo chmod -R 777 /home/$USER/.config/AimTux
+function fix_at {
+    [ ! -d /home/at ] && sudo mkdir /home/at
+    sudo chmod 777 /home/at
+    [ -d /tmp/AimTux* ] && sudo rm -rf /tmp/AimTux*
+    [ -f /tmp/master* ] && sudo rm /tmp/master*
+    [ -f /tmp/v1.0* ] && sudo rm /tmp/v1.0*
+    [ -f /tmp/faceit* ] && sudo rm /tmp/faceit*
+}
+function fix_atcfg {
+    [ ! -d /home/$USER/.config/AimTux ] && sudo mkdir /home/$USER/.config/AimTux
+    sudo chown -R $USER:$USER /home/$USER/.config/AimTux
+    sudo chmod -R 777 /home/$USER/.config/AimTux
+}
+###EXEC FUNCTION###
+del_steamruntime
+fix_library
+clear
 ###MENU###
 function menu {
 clear
 echo
 echo -e "\t\t\tМеню скрипта\n"
-echo -e "\t1.  Установка AimTux(new) новая версия"
-echo -e "\t2.  Установка AimTux(stable) старая версия"
-echo -e "\t3.  Установка AimTux(faceit) версия для FACEIT"
-echo -e "\t4.  Установка конфигов AimTux"
-echo -e "\t5.  Удаление конфигов AimTux"
-echo -e "\t6.  Очистка каталога(/home/at/) от AimTux"
-echo -e "\t7.  Полное обновление системы Ubuntu/Debian"
-echo -e "\t8.  Other tweaks for home"
-echo -e "\t9.  Fixed dumps Steam folder"
+echo -e "\t1. Установка AimTux(new) новая версия"
+echo -e "\t2. Установка AimTux(stable) старая версия"
+echo -e "\t3. Установка AimTux(faceit) версия для FACEIT"
+echo -e "\t4. Установка конфигов AimTux"
+echo -e "\t5. Удаление конфигов AimTux"
+echo -e "\t6. Очистка каталога(/home/at/) от AimTux"
+echo -e "\t7. Полное обновление системы Ubuntu/Debian/Arch"
+echo -e "\t8. Other tweaks for home"
+echo -e "\t9. Fixed dumps Steam folder"
 echo -e "\t10. Deletion Steam folder"
 echo -e "\t0. Установка необходимых пакетов(для ПЕРВИЧНОЙ сборки)"
 echo -e "\tq. Выход\n"
-echo -en "\t\tВведите номер раздела: "
-read -n 1 option
+echo -en "\tВведите номер раздела: "
+read option
 }
 while [ $? -ne 1 ]
     do
@@ -53,18 +81,21 @@ while [ $? -ne 1 ]
             break 
             ;;
      0)
-            if [ -e /etc/arch-release ]; then 
-                 sudo pacman -Syu
-                 sudo pacman -S base-devel cmake gdb git sdl2 xdotool
-            if [ -e /etc/debian_version ]; then
+            if [ -e "/etc/manjaro-release" ]; then
+            sudo pacman -Syu base-devel cmake gdb git sdl2 xdotool
+            fi
+            if [ -e "/etc/arch-release" ]; then
+            sudo pacman -Syu base-devel cmake gdb git sdl2 xdotool
+            fi
+            if [ -e "/etc/debian-version" ]; then
                 sudo apt-get update
                 sudo apt-get install -y cmake g++ gdb git libsdl2-dev zlib1g-dev libxdo-dev
+            fi
             echo "Finished pre-install packages!"
             ;;
      1)
             echo "Compiling AimTux new version..."
-            [ -d /tmp/AimTux* ] && sudo rm -rf AimTux*
-            [ -f /tmp/master* ] && sudo rm master*
+            fix_at
             [ -d /home/at/am_new ] && sudo rm -rf /home/at/am_new
             cd /tmp
             git clone https://github.com/McSwaggens/AimTux
@@ -76,8 +107,7 @@ while [ $? -ne 1 ]
             ;;
      2)
             echo "Compiling AimTux stable version..."
-            [ -d /tmp/AimTux* ] && sudo rm -rf AimTux*
-            [ -f /tmp/v1.0* ] && sudo rm v1.0*
+            fix_at
             [ -d /home/at/am_stable ] && sudo rm -rf /home/at/am_stable
             cd /tmp
             wget https://github.com/McSwaggens/AimTux/archive/v1.0.zip && unzip v1.0.zip
@@ -89,8 +119,7 @@ while [ $? -ne 1 ]
             ;;
      3)
             echo "Compiling AimTux FACEIT version..."
-            [ -d /tmp/AimTux* ] && sudo rm -rf AimTux*
-            [ -f /tmp/faceit* ] && sudo rm faceit*
+            fix_at
             [ -d /home/at/am_faceit ] && sudo rm -rf /home/at/am_faceit
             cd /tmp
             wget https://github.com/McSwaggens/AimTux/archive/faceit.zip && unzip faceit.zip
@@ -102,9 +131,7 @@ while [ $? -ne 1 ]
             ;;
      4)
             echo "Install Configs..."
-            [ ! -d /home/$USER/.config/AimTux ] && sudo mkdir /home/$USER/.config/AimTux
-            sudo chown -R $USER:$USER /home/$USER/.config/AimTux
-            sudo chmod -R 777 /home/$USER/.config/AimTux
+            fix_atcfg
             cd /tmp
             [ -d /tmp/ATCFG ] && sudo rm -rf ATCFG
             git clone https://github.com/voltagegg/ATCFG
@@ -123,7 +150,8 @@ while [ $? -ne 1 ]
             echo "Finished deletion AimTux!"
             ;;
      7)
-            sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -fy && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean
+            deb_upgrade
+            arch_upgrade
             echo "Finished upgrade system!"
             ;;
      8)
@@ -132,9 +160,7 @@ while [ $? -ne 1 ]
             echo "Finished other tweaks!"
             ;;
      9)
-            [ ! -d /tmp/dumps ] && sudo mkdir /tmp/dumps
-            sudo rm -rf /tmp/dumps/*
-            sudo chmod 600 /tmp/dumps
+            fix_dumps
             echo "Finished fixed dumps Steam!"
             ;;
      10)
