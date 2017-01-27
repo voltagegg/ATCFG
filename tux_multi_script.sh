@@ -96,6 +96,7 @@ while [ $? -ne 1 ]
      1)
             echo "Compiling AimTux new version..."
             fix_at
+            fix_dumps
             [ -d /home/at/am_new ] && sudo rm -rf /home/at/am_new
             cd /tmp
             git clone https://github.com/McSwaggens/AimTux
@@ -108,6 +109,7 @@ while [ $? -ne 1 ]
      2)
             echo "Compiling AimTux stable version..."
             fix_at
+            fix_dumps
             [ -d /home/at/am_stable ] && sudo rm -rf /home/at/am_stable
             cd /tmp
             wget https://github.com/McSwaggens/AimTux/archive/v1.0.zip && unzip v1.0.zip
@@ -120,6 +122,7 @@ while [ $? -ne 1 ]
      3)
             echo "Compiling AimTux FACEIT version..."
             fix_at
+            fix_dumps
             [ -d /home/at/am_faceit ] && sudo rm -rf /home/at/am_faceit
             cd /tmp
             wget https://github.com/McSwaggens/AimTux/archive/faceit.zip && unzip faceit.zip
@@ -132,6 +135,7 @@ while [ $? -ne 1 ]
      4)
             echo "Install Configs..."
             fix_atcfg
+            fix_dumps
             cd /tmp
             [ -d /tmp/ATCFG ] && sudo rm -rf ATCFG
             git clone https://github.com/voltagegg/ATCFG
