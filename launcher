@@ -1,0 +1,42 @@
+#!/bin/bash
+###MENU AIMTUX###
+function menu {
+clear
+echo
+echo -e "\t\t\tMenu AimTux\n"
+echo -e "\t1. Loads AimTux"
+echo -e "\t2. Unloads AimTux"
+echo -e "\t3. Reloads AimTux"
+echo -e "\t4. Updates AimTux"
+echo -e "\tq. Exit\n"
+echo -en "\tВведите номер раздела: "
+read option
+}
+while [ $? -ne 1 ]
+    do
+        menu
+        case $option in
+     q)
+            break 
+            ;;
+     
+     1)
+            ./load
+            ;;
+     2)
+            ./uload
+            ;;
+     3)
+            ./rload
+            ;;
+     4)
+            ./update
+            ;;
+     *)
+            echo -en "\n\t\tНужно выбрать раздел!"
+            ;;
+        esac
+    echo -en "\n\n\t\tНажмите любую клавишу для продолжения"
+    read -n 1 line
+    done
+clear
