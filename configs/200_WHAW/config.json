@@ -25,7 +25,7 @@
             },
             "AutoAim" : {
                "Enabled" : true,
-               "FOV" : 2.07200006246566772,
+               "FOV" : 2.0720000267028809,
                "RealDistance" : false
             },
             "AutoPistol" : {
@@ -83,7 +83,7 @@
             },
             "AutoAim" : {
                "Enabled" : true,
-               "FOV" : 2.07200006246566772,
+               "FOV" : 2.0720000267028809,
                "RealDistance" : false
             },
             "AutoPistol" : {
@@ -97,7 +97,7 @@
             },
             "AutoWall" : {
                "Bones" : [ true, true, true, true, true, true ],
-               "Enabled" : true,
+               "Enabled" : false,
                "Value" : 50.629001617431641
             },
             "Enabled" : true,
@@ -130,7 +130,7 @@
                },
                "Type" : 0
             },
-            "TargetBone" : 8
+            "TargetBone" : 7
          },
          "WEAPON_AWP" : {
             "AimKey" : "MOUSE3",
@@ -154,9 +154,9 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ false, false, false, false, false, false ],
+               "Bones" : [ true, true, true, true, true, true ],
                "Enabled" : false,
-               "Value" : 85.220001220703125
+               "Value" : 50.629001617431641
             },
             "Enabled" : true,
             "ErrorMargin" : {
@@ -238,10 +238,10 @@
                "Enabled" : false
             },
             "Smooth" : {
-               "Amount" : 0.87700003385543823,
+               "Amount" : 1,
                "Enabled" : true,
                "Salting" : {
-                  "Enabled" : true,
+                  "Enabled" : false,
                   "Multiplier" : 0.075000002980232239
                },
                "Type" : 0
@@ -328,7 +328,7 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ true, false, false, false, false, false ],
+               "Bones" : [ true, true, true, true, true, true ],
                "Enabled" : true,
                "Value" : 10.37700080871582
             },
@@ -362,7 +362,7 @@
                },
                "Type" : 0
             },
-            "TargetBone" : 8
+            "TargetBone" : 6
          },
          "WEAPON_GLOCK" : {
             "AimKey" : "MOUSE3",
@@ -386,7 +386,7 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ true, true, true, true, true, true ],
+               "Bones" : [ true, true, true, true, false, false ],
                "Enabled" : true,
                "Value" : 50.629001617431641
             },
@@ -412,7 +412,7 @@
                "Enabled" : false
             },
             "Smooth" : {
-               "Amount" : 0.88400006294250488,
+               "Amount" : 1,
                "Enabled" : true,
                "Salting" : {
                   "Enabled" : false,
@@ -431,7 +431,7 @@
             },
             "AutoAim" : {
                "Enabled" : true,
-               "FOV" : 2.07200006246566772,
+               "FOV" : 2.0720000267028809,
                "RealDistance" : false
             },
             "AutoPistol" : {
@@ -489,7 +489,7 @@
             },
             "AutoAim" : {
                "Enabled" : true,
-               "FOV" : 2.07200006246566772,
+               "FOV" : 2.0720000267028809,
                "RealDistance" : false
             },
             "AutoPistol" : {
@@ -586,10 +586,10 @@
                "Enabled" : false
             },
             "Smooth" : {
-               "Amount" : 0.82500004768371582,
+               "Amount" : 1,
                "Enabled" : true,
                "Salting" : {
-                  "Enabled" : true,
+                  "Enabled" : false,
                   "Multiplier" : 0.089000001549720764
                },
                "Type" : 0
@@ -618,7 +618,7 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ true, false, false, false, false, false ],
+               "Bones" : [ true, true, true, true, true, true ],
                "Enabled" : true,
                "Value" : 10.37700080871582
             },
@@ -652,7 +652,7 @@
                },
                "Type" : 0
             },
-            "TargetBone" : 8
+            "TargetBone" : 6
          },
          "WEAPON_SSG08" : {
             "AimKey" : "MOUSE3",
@@ -663,7 +663,7 @@
             },
             "AutoAim" : {
                "Enabled" : true,
-               "FOV" : 1.815000057220459,
+               "FOV" : 3.3580002784729004,
                "RealDistance" : false
             },
             "AutoPistol" : {
@@ -676,7 +676,7 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ true, false, false, false, false, false ],
+               "Bones" : [ false, false, true, true, false, false ],
                "Enabled" : true,
                "Value" : 85.220001220703125
             },
@@ -779,7 +779,7 @@
             },
             "AutoAim" : {
                "Enabled" : true,
-               "FOV" : 2.07200006246566772,
+               "FOV" : 2.0720000267028809,
                "RealDistance" : false
             },
             "AutoPistol" : {
@@ -850,7 +850,7 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ true, true, true, true, true, true ],
+               "Bones" : [ true, true, true, true, false, false ],
                "Enabled" : true,
                "Value" : 50.629001617431641
             },

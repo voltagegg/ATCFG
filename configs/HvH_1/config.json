@@ -107,6 +107,7 @@
    },
    "AutoStrafe" : {
       "enabled" : false,
+      "silent" : true,
       "type" : 0
    },
    "Autoblock" : {
@@ -134,7 +135,7 @@
          "type" : 2
       },
       "Boxes" : {
-         "enabled" : false,
+         "enabled" : true,
          "type" : 1
       },
       "BulletTracers" : {
@@ -254,6 +255,9 @@
          }
       },
       "Hitmarker" : {
+         "Damage" : {
+            "enabled" : false
+         },
          "allies" : false,
          "color" : {
             "a" : 1,
@@ -298,8 +302,8 @@
          "time" : 1000
       },
       "Tracers" : {
-         "enabled" : false,
-         "type" : 0
+         "enabled" : true,
+         "type" : 1
       },
       "ally_color" : {
          "a" : 1,
@@ -445,6 +449,10 @@
    "FakeLag" : {
       "enabled" : false,
       "value" : 5
+   },
+   "NameStealer" : {
+      "enabled" : false,
+      "team" : 1
    },
    "NoScopeBorder" : {
       "enabled" : true
@@ -818,7 +826,7 @@
    "Triggerbot" : {
       "Delay" : {
          "enabled" : false,
-         "value" : 250
+         "value" : 23
       },
       "Filters" : {
          "allies" : false,
@@ -829,7 +837,7 @@
          "legs" : false,
          "smoke_check" : false,
          "stomach" : false,
-         "walls" : false
+         "walls" : true
       },
       "enabled" : true,
       "key" : "ALT"
@@ -863,10 +871,10 @@
    },
    "View" : {
       "NoAimPunch" : {
-         "enabled" : false
+         "enabled" : true
       },
       "NoViewPunch" : {
-         "enabled" : false
+         "enabled" : true
       }
    }
 }

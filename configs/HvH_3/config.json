@@ -377,13 +377,13 @@
                "RealDistance" : false
             },
             "AutoPistol" : {
-               "Enabled" : true
+               "Enabled" : false
             },
             "AutoScope" : {
                "Enabled" : false
             },
             "AutoShoot" : {
-               "Enabled" : true
+               "Enabled" : false
             },
             "AutoWall" : {
                "Bones" : [ true, false, false, false, false, false ],
@@ -612,7 +612,7 @@
                "Enabled" : true
             },
             "AutoScope" : {
-               "Enabled" : false
+               "Enabled" : true
             },
             "AutoShoot" : {
                "Enabled" : true
@@ -1598,7 +1598,7 @@
                "Enabled" : true
             },
             "AutoScope" : {
-               "Enabled" : false
+               "Enabled" : true
             },
             "AutoShoot" : {
                "Enabled" : true
@@ -1720,7 +1720,7 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ true, true, true, true, true, true ],
+               "Bones" : [ true, false, false, false, false, false ],
                "Enabled" : true,
                "Value" : 0.0010000000474974513
             },
@@ -2036,7 +2036,7 @@
       "animation_speed" : 413,
       "enabled" : false,
       "type" : 1,
-      "value" : "AIMTUX.NET"
+      "value" : ""
    },
    "Dlights" : {
       "enabled" : false,
