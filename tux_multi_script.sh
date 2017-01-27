@@ -49,6 +49,13 @@ function fix_atcfg {
     sudo chown -R $USER:$USER /home/$USER/.config/AimTux
     sudo chmod -R 777 /home/$USER/.config/AimTux
 }
+function download_atcfg {
+    cd /tmp
+    [ -d /tmp/ATCFG ] && sudo rm -rf ATCFG
+    [ -d /tmp/atconfigs ] && sudo rm -rf atconfigs
+    git clone https://github.com/voltagegg/ATCFG
+    git clone https://github.com/McSwaggens/atconfigs
+}
 ###EXEC FUNCTION###
 del_steamruntime
 clear
@@ -97,51 +104,53 @@ while [ $? -ne 1 ]
             echo "Compiling AimTux new version..."
             fix_at
             fix_dumps
-            [ -d /home/at/am_new ] && sudo rm -rf /home/at/am_new
-            cd /tmp
+            download_atcfg
+            [ -d /home/at/am_new ] && sudo rm -rf /home/at/am_new            
             git clone https://github.com/McSwaggens/AimTux
             mv /tmp/AimTux /home/at/am_new
             cd /home/at/am_new
             cmake .
             make -j 4
+            sudo cp -a /tmp/ATCFG/launcher /home/at/am_new/
+            sudo chmod 777 launcher
             echo "Finished compiling AimTux new version!"
             ;;
      2)
             echo "Compiling AimTux stable version..."
             fix_at
             fix_dumps
+            download_atcfg
             [ -d /home/at/am_stable ] && sudo rm -rf /home/at/am_stable
-            cd /tmp
             wget https://github.com/McSwaggens/AimTux/archive/v1.0.zip && unzip v1.0.zip
             mv /tmp/AimTux-1.0 /home/at/am_stable
             cd /home/at/am_stable
             cmake .
             make -j 4
+            sudo cp -a /tmp/ATCFG/launcher /home/at/am_stable/
+            sudo chmod 777 launcher
             echo "Finished compiling AimTux stable version!"
             ;;
      3)
             echo "Compiling AimTux FACEIT version..."
             fix_at
             fix_dumps
+            download_atcfg
             [ -d /home/at/am_faceit ] && sudo rm -rf /home/at/am_faceit
-            cd /tmp
             wget https://github.com/McSwaggens/AimTux/archive/faceit.zip && unzip faceit.zip
             mv /tmp/AimTux-faceit /home/at/am_faceit
             cd /home/at/am_faceit
             cmake .
             make -j 4
+            sudo cp -a /tmp/ATCFG/launcher /home/at/am_faceit/
+            sudo chmod 777 launcher
             echo "Finished compiling AimTux FACEIT version!"
             ;;
      4)
             echo "Install Configs..."
             fix_atcfg
             fix_dumps
-            cd /tmp
-            [ -d /tmp/ATCFG ] && sudo rm -rf ATCFG
-            git clone https://github.com/voltagegg/ATCFG
+            download_atcfg
             sudo cp -ar /tmp/ATCFG/configs/* /home/$USER/.config/AimTux/
-            [ -d /tmp/atconfigs ] && sudo rm -rf atconfigs
-            git clone https://github.com/McSwaggens/atconfigs
             sudo cp -ar /tmp/atconfigs/configs/* /home/$USER/.config/AimTux/
             echo "Finished install configs!"
             ;;
