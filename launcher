@@ -19,7 +19,6 @@ while [ $? -ne 1 ]
      q)
             break 
             ;;
-     
      1)
             ./load
             ;;
