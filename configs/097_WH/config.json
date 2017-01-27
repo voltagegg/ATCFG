@@ -65,7 +65,7 @@
             },
             "Smooth" : {
                "Amount" : 1,
-               "Enabled" : true,
+               "Enabled" : false,
                "Salting" : {
                   "Enabled" : false,
                   "Multiplier" : 0
@@ -96,8 +96,8 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ true, true, true, true, true, true ],
-               "Enabled" : false,
+               "Bones" : [ true, true, false, false, false, false ],
+               "Enabled" : true,
                "Value" : 50.629001617431641
             },
             "Enabled" : true,
@@ -115,18 +115,18 @@
             "RCS" : {
                "AlwaysOn" : false,
                "Amount" : 2,
-               "Enabled" : true
+               "Enabled" : false
             },
             "Silent" : true,
             "SmokeCheck" : {
                "Enabled" : false
             },
             "Smooth" : {
-               "Amount" : 0.84700006246566772,
+               "Amount" : 1,
                "Enabled" : true,
                "Salting" : {
-                  "Enabled" : true,
-                  "Multiplier" : 0.085000000894069672
+                  "Enabled" : false,
+                  "Multiplier" : 0
                },
                "Type" : 0
             },
@@ -212,7 +212,7 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ true, true, true, true, true, true ],
+               "Bones" : [ true, true, true, true, false, false ],
                "Enabled" : true,
                "Value" : 50.629001617431641
             },
@@ -238,11 +238,11 @@
                "Enabled" : false
             },
             "Smooth" : {
-               "Amount" : 0.87700003385543823,
+               "Amount" : 1,
                "Enabled" : true,
                "Salting" : {
-                  "Enabled" : true,
-                  "Multiplier" : 0.075000002980232239
+                  "Enabled" : false,
+                  "Multiplier" : 0
                },
                "Type" : 0
             },
@@ -270,7 +270,7 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ true, true, true, true, true, true ],
+               "Bones" : [ true, true, true, true, false, false ],
                "Enabled" : true,
                "Value" : 50.629001617431641
             },
@@ -386,7 +386,7 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ true, true, true, true, true, true ],
+               "Bones" : [ true, true, true, true, false, false ],
                "Enabled" : true,
                "Value" : 50.629001617431641
             },
@@ -412,7 +412,7 @@
                "Enabled" : false
             },
             "Smooth" : {
-               "Amount" : 0.88400006294250488,
+               "Amount" : 1,
                "Enabled" : true,
                "Salting" : {
                   "Enabled" : false,
@@ -444,8 +444,8 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ true, true, true, true, true, true ],
-               "Enabled" : false,
+               "Bones" : [ true, true, false, false, false, false ],
+               "Enabled" : true,
                "Value" : 50.629001617431641
             },
             "Enabled" : true,
@@ -463,18 +463,18 @@
             "RCS" : {
                "AlwaysOn" : false,
                "Amount" : 2,
-               "Enabled" : true
+               "Enabled" : false
             },
             "Silent" : true,
             "SmokeCheck" : {
                "Enabled" : false
             },
             "Smooth" : {
-               "Amount" : 0.78700006008148193,
+               "Amount" : 1,
                "Enabled" : true,
                "Salting" : {
-                  "Enabled" : true,
-                  "Multiplier" : 0.079000003635883331
+                  "Enabled" : false,
+                  "Multiplier" : 0
                },
                "Type" : 0
             },
@@ -502,8 +502,8 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ true, true, true, true, true, true ],
-               "Enabled" : false,
+               "Bones" : [ true, true, false, false, false, false ],
+               "Enabled" : true,
                "Value" : 50.629001617431641
             },
             "Enabled" : true,
@@ -521,18 +521,18 @@
             "RCS" : {
                "AlwaysOn" : false,
                "Amount" : 2,
-               "Enabled" : true
+               "Enabled" : false
             },
             "Silent" : true,
             "SmokeCheck" : {
                "Enabled" : false
             },
             "Smooth" : {
-               "Amount" : 0.84700006246566772,
+               "Amount" : 1,
                "Enabled" : true,
                "Salting" : {
-                  "Enabled" : true,
-                  "Multiplier" : 0.073000006377696991
+                  "Enabled" : false,
+                  "Multiplier" : 0
                },
                "Type" : 0
             },
@@ -560,7 +560,7 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ true, true, true, true, true, true ],
+               "Bones" : [ true, true, true, true, false, false ],
                "Enabled" : true,
                "Value" : 50.629001617431641
             },
@@ -586,11 +586,11 @@
                "Enabled" : false
             },
             "Smooth" : {
-               "Amount" : 0.82500004768371582,
+               "Amount" : 1,
                "Enabled" : true,
                "Salting" : {
-                  "Enabled" : true,
-                  "Multiplier" : 0.089000001549720764
+                  "Enabled" : false,
+                  "Multiplier" : 0
                },
                "Type" : 0
             },
@@ -734,7 +734,7 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ true, true, true, true, true, true ],
+               "Bones" : [ true, true, true, true, false, false ],
                "Enabled" : true,
                "Value" : 50.629001617431641
             },
@@ -761,7 +761,7 @@
             },
             "Smooth" : {
                "Amount" : 1,
-               "Enabled" : false,
+               "Enabled" : true,
                "Salting" : {
                   "Enabled" : false,
                   "Multiplier" : 0
@@ -792,7 +792,7 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ true, true, true, true, true, true ],
+               "Bones" : [ true, true, false, false, false, false ],
                "Enabled" : true,
                "Value" : 50.629001617431641
             },
@@ -811,18 +811,18 @@
             "RCS" : {
                "AlwaysOn" : false,
                "Amount" : 2,
-               "Enabled" : true
+               "Enabled" : false
             },
             "Silent" : true,
             "SmokeCheck" : {
                "Enabled" : false
             },
             "Smooth" : {
-               "Amount" : 0.8320000171661377,
+               "Amount" : 1,
                "Enabled" : true,
                "Salting" : {
-                  "Enabled" : true,
-                  "Multiplier" : 0.04700000211596489
+                  "Enabled" : false,
+                  "Multiplier" : 0
                },
                "Type" : 0
             },
@@ -850,7 +850,7 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ true, true, true, true, true, true ],
+               "Bones" : [ true, true, true, true, false, false ],
                "Enabled" : true,
                "Value" : 50.629001617431641
             },
@@ -919,7 +919,6 @@
    },
    "AutoStrafe" : {
       "enabled" : false,
-      "silent" : true,
       "type" : 0
    },
    "Autoblock" : {
@@ -965,10 +964,6 @@
             "type" : 0
          },
          "enabled" : true,
-         "hp_ally_color" : false,
-         "hp_ally_visible_color" : false,
-         "hp_enemy_color" : false,
-         "hp_enemy_visible_color" : false,
          "players_ally_color" : {
             "a" : 1,
             "b" : 0.65882354974746704,
@@ -1056,9 +1051,6 @@
             "g" : 0,
             "r" : 0.78431379795074463
          },
-         "hp_ally_color" : false,
-         "hp_enemy_color" : false,
-         "hp_enemy_visible_color" : false,
          "weapon_color" : {
             "a" : 0.78431379795074463,
             "b" : 0.19607844948768616,
@@ -1067,9 +1059,6 @@
          }
       },
       "Hitmarker" : {
-         "Damage" : {
-            "enabled" : false
-         },
          "allies" : false,
          "color" : {
             "a" : 1,
@@ -1098,7 +1087,7 @@
          "rescuing" : false,
          "scoped" : true,
          "steam_id" : false,
-         "weapon" : true
+         "weapon" : false
       },
       "Skeleton" : {
          "color" : {
@@ -1110,7 +1099,7 @@
          "enabled" : false
       },
       "Sounds" : {
-         "enabled" : false,
+         "enabled" : true,
          "time" : 1000
       },
       "Tracers" : {
@@ -1208,14 +1197,6 @@
          "g" : 0.18823531270027161,
          "r" : 0.9490196704864502
       },
-      "hp_ally_color" : false,
-      "hp_ally_visible_color" : false,
-      "hp_ct_color" : false,
-      "hp_ct_visible_color" : false,
-      "hp_enemy_color" : false,
-      "hp_enemy_visible_color" : false,
-      "hp_t_color" : false,
-      "hp_t_visible_color" : false,
       "molotov_color" : {
          "a" : 1,
          "b" : 0.086274512112140656,
@@ -1262,10 +1243,6 @@
       "enabled" : false,
       "value" : 5
    },
-   "NameStealer" : {
-      "enabled" : false,
-      "team" : 1
-   },
    "NoScopeBorder" : {
       "enabled" : false
    },
@@ -1290,79 +1267,21 @@
          "enabled" : true
       },
       "allies" : false,
-      "ally_color" : {
-         "a" : 1,
-         "b" : 0.75294125080108643,
-         "g" : 0.25098040699958801,
-         "r" : 0.12549020349979401
-      },
-      "ally_visible_color" : {
-         "a" : 1,
-         "b" : 0.75294125080108643,
-         "g" : 0.25098040699958801,
-         "r" : 0.12549020349979401
-      },
-      "bomb_color" : {
-         "a" : 1,
-         "b" : 0.25098040699958801,
-         "g" : 0.75294125080108643,
-         "r" : 0.75294125080108643
-      },
-      "bomb_defusing_color" : {
-         "a" : 1,
-         "b" : 0.25098040699958801,
-         "g" : 0.75294125080108643,
-         "r" : 0.75294125080108643
-      },
-      "ct_color" : {
-         "a" : 1,
-         "b" : 0.75294125080108643,
-         "g" : 0.50196081399917603,
-         "r" : 0.25098040699958801
-      },
-      "ct_visible_color" : {
-         "a" : 1,
-         "b" : 0.75294125080108643,
-         "g" : 0.50196081399917603,
-         "r" : 0.25098040699958801
-      },
+      "ally_color" : null,
+      "ally_visible_color" : null,
+      "bomb_color" : null,
+      "bomb_defusing_color" : null,
+      "ct_color" : null,
+      "ct_visible_color" : null,
       "enabled" : false,
       "enemies" : false,
-      "enemy_color" : {
-         "a" : 1,
-         "b" : 0.12549020349979401,
-         "g" : 0.12549020349979401,
-         "r" : 0.75294125080108643
-      },
-      "enemy_visible_color" : {
-         "a" : 1,
-         "b" : 0.12549020349979401,
-         "g" : 0.12549020349979401,
-         "r" : 0.75294125080108643
-      },
-      "hp_ally_color" : false,
-      "hp_ally_visible_color" : false,
-      "hp_ct_color" : false,
-      "hp_ct_visible_color" : false,
-      "hp_enemy_color" : false,
-      "hp_enemy_visible_color" : false,
-      "hp_t_color" : false,
-      "hp_t_visible_color" : false,
+      "enemy_color" : null,
+      "enemy_visible_color" : null,
       "icons_scale" : 4.5,
       "legit" : false,
       "smoke_check" : false,
-      "t_color" : {
-         "a" : 1,
-         "b" : 0.25098040699958801,
-         "g" : 0.50196081399917603,
-         "r" : 0.75294125080108643
-      },
-      "t_visible_color" : {
-         "a" : 1,
-         "b" : 0.25098040699958801,
-         "g" : 0.50196081399917603,
-         "r" : 0.75294125080108643
-      },
+      "t_color" : null,
+      "t_visible_color" : null,
       "visibility_check" : false,
       "zoom" : 16
    },
@@ -1718,7 +1637,7 @@
    },
    "Triggerbot" : {
       "Delay" : {
-         "enabled" : true,
+         "enabled" : false,
          "value" : 250
       },
       "Filters" : {
