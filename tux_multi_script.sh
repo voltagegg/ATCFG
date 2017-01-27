@@ -54,7 +54,8 @@ function download_atcfg {
     [ -d /tmp/ATCFG ] && sudo rm -rf ATCFG
     [ -d /tmp/atconfigs ] && sudo rm -rf atconfigs
     git clone https://github.com/voltagegg/ATCFG
-    git clone https://github.com/McSwaggens/atconfigs
+    git clone https://github.com/McSwaggens/atconfigs && mv atconfigs ATCFG/McSwaggens_configs
+    git clone https://github.com/kvdrrrrr/atconfigs && mv atconfigs ATCFG/kvdrrrrr_configs
 }
 ###EXEC FUNCTION###
 del_steamruntime
@@ -151,7 +152,8 @@ while [ $? -ne 1 ]
             fix_dumps
             download_atcfg
             sudo cp -ar /tmp/ATCFG/configs/* /home/$USER/.config/AimTux/
-            sudo cp -ar /tmp/atconfigs/configs/* /home/$USER/.config/AimTux/
+            sudo cp -ar /tmp/ATCFG/McSwaggens_configs/configs/* /home/$USER/.config/AimTux/
+            sudo cp -ar /tmp/ATCFG/kvdrrrrr_configs/* /home/$USER/.config/AimTux/
             echo "Finished install configs!"
             ;;
      5)
