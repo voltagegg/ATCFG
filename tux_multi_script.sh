@@ -10,13 +10,13 @@ function arch_upgrade {
     fi
 }
 function deb_upgrade {
-    if [ -e "/etc/debian-version" ]; then
+    if [ -e "/etc/debian_version" ]; then
         sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -fy &&
         sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean
     fi
 }
 function del_steamruntime {
-    if [ -e "/etc/debian-version" ]; then
+    if [ -e "/etc/debian_version" ]; then
         rm ~/.steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libstdc++.so.*
         rm ~/.steam/ubuntu12_32/steam-runtime/i386/lib/i386-linux-gnu/libgcc_s.so.*
         rm ~/.steam/ubuntu12_32/steam-runtime/amd64/lib/x86_64-linux-gnu/libgcc_s.so.*
@@ -87,7 +87,7 @@ while [ $? -ne 1 ]
             if [ -e "/etc/arch-release" ]; then
                 sudo pacman -Syu base-devel cmake gdb git sdl2 xdotool
             fi
-            if [ -e "/etc/debian-version" ]; then
+            if [ -e "/etc/debian_version" ]; then
                 sudo apt-get update
                 sudo apt-get install -y cmake g++ gdb git libsdl2-dev zlib1g-dev libxdo-dev
             fi
