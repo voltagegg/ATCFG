@@ -51,8 +51,8 @@ function fix_atcfg {
 }
 ###EXEC FUNCTION###
 del_steamruntime
-fix_library
 clear
+fix_library
 ###MENU###
 function menu {
 clear
