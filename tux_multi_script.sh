@@ -40,9 +40,10 @@ function fix_at {
     [ ! -d /home/at ] && sudo mkdir /home/at
     sudo chmod 777 /home/at
     [ -d /tmp/AimTux* ] && sudo rm -rf /tmp/AimTux*
-    [ -f /tmp/master* ] && sudo rm /tmp/master*
-    [ -f /tmp/v1.0* ] && sudo rm /tmp/v1.0*
-    [ -f /tmp/faceit* ] && sudo rm /tmp/faceit*
+    [ -f /tmp/master* ] && sudo rm -f /tmp/master*
+    [ -f /tmp/v1.0* ] && sudo rm -f /tmp/v1.0*
+    [ -f /tmp/faceit* ] && sudo rm -f /tmp/faceit*
+    [ -f /tmp/gloves* ] && sudo rm -f /tmp/gloves*
 }
 function fix_atcfg {
     [ ! -d /home/$USER/.config/AimTux ] && sudo mkdir /home/$USER/.config/AimTux
@@ -66,16 +67,17 @@ function menu {
 clear
 echo
 echo -e "\t\t\tМеню скрипта\n"
-echo -e "\t1. Установка AimTux(new) новая версия"
-echo -e "\t2. Установка AimTux(stable) старая версия"
-echo -e "\t3. Установка AimTux(faceit) версия для FACEIT"
-echo -e "\t4. Установка конфигов AimTux"
-echo -e "\t5. Удаление конфигов AimTux"
-echo -e "\t6. Очистка каталога(/home/at/) от AimTux"
+echo -e "\t1. Установка новой версии AimTux в (/home/at/am_new)"
+echo -e "\t2. Установка старой версии AimTux в (/home/at/am_stable)"
+echo -e "\t3. Установка FACEIT версии AimTux в (/home/at/am_faceit)"
+echo -e "\t4. Удаление всех версий AimTux в (/home/at/*)"
+echo -e "\t5. Установка конфигов AimTux"
+echo -e "\t6. Удаление всех конфигов AimTux"
 echo -e "\t7. Полное обновление системы Ubuntu/Debian/Arch"
 echo -e "\t8. Other tweaks for home"
 echo -e "\t9. Fixed dumps Steam folder"
 echo -e "\t10. Deletion Steam folder"
+echo -e "\tt. Install test(am_test) version"
 echo -e "\t0. Установка необходимых пакетов(для ПЕРВИЧНОЙ сборки)"
 echo -e "\tq. Выход\n"
 echo -en "\tВведите номер раздела: "
@@ -107,7 +109,7 @@ while [ $? -ne 1 ]
             fix_dumps
             download_atcfg
             [ -d /home/at/am_new ] && sudo rm -rf /home/at/am_new            
-            git clone https://github.com/McSwaggens/AimTux
+            git clone --recursive https://github.com/AimTuxOfficial/AimTux
             mv /tmp/AimTux /home/at/am_new
             cd /home/at/am_new
             cmake .
@@ -122,7 +124,7 @@ while [ $? -ne 1 ]
             fix_dumps
             download_atcfg
             [ -d /home/at/am_stable ] && sudo rm -rf /home/at/am_stable
-            wget https://github.com/McSwaggens/AimTux/archive/v1.0.zip && unzip v1.0.zip
+            wget https://github.com/AimTuxOfficial/AimTux/archive/v1.0.zip && unzip v1.0.zip
             mv /tmp/AimTux-1.0 /home/at/am_stable
             cd /home/at/am_stable
             cmake .
@@ -137,8 +139,8 @@ while [ $? -ne 1 ]
             fix_dumps
             download_atcfg
             [ -d /home/at/am_faceit ] && sudo rm -rf /home/at/am_faceit
-            wget https://github.com/McSwaggens/AimTux/archive/faceit.zip && unzip faceit.zip
-            mv /tmp/AimTux-faceit /home/at/am_faceit
+            git clone --recursive -b faceit https://github.com/AimTuxOfficial/AimTux
+            mv /tmp/AimTux /home/at/am_faceit
             cd /home/at/am_faceit
             cmake .
             make -j 4
@@ -147,6 +149,10 @@ while [ $? -ne 1 ]
             echo "Finished compiling AimTux FACEIT version!"
             ;;
      4)
+            sudo rm -rf /home/at/*
+            echo "Finished deletion AimTux!"
+            ;;
+     5)
             echo "Install Configs..."
             fix_atcfg
             fix_dumps
@@ -156,13 +162,9 @@ while [ $? -ne 1 ]
             sudo cp -ar /tmp/ATCFG/kvdrrrrr_configs/* /home/$USER/.config/AimTux/
             echo "Finished install configs!"
             ;;
-     5)
+     6)
             sudo rm -rf /home/$USER/.config/AimTux/*
             echo "Finished deletion configs!"
-            ;;
-     6)
-            sudo rm -rf /home/at/*
-            echo "Finished deletion AimTux!"
             ;;
      7)
             deb_upgrade
@@ -178,9 +180,24 @@ while [ $? -ne 1 ]
             fix_dumps
             echo "Finished fixed dumps Steam!"
             ;;
-     10)
+    10)
             sudo rm -rf /home/$USER/Steam && sudo rm -rf /home/$USER/.steam
             echo "Finished deletion Steam folders!"
+            ;;
+     t)
+            echo "Compiling AimTux TEST version..."
+            fix_at
+            fix_dumps
+            download_atcfg
+            [ -d /home/at/am_test ] && sudo rm -rf /home/at/am_test
+            git clone --recursive -b gloves https://github.com/AimTuxOfficial/AimTux
+            mv /tmp/AimTux /home/at/am_test
+            cd /home/at/am_test
+            cmake .
+            make -j 4
+            sudo cp -a /tmp/ATCFG/launcher /home/at/am_test/
+            sudo chmod 777 launcher
+            echo "Finished compiling AimTux TEST version!"
             ;;
      *)
             echo -en "\n\t\tНужно выбрать раздел!"
