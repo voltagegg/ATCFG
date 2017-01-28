@@ -67,7 +67,7 @@ function upload_atcfg {
     cd /tmp/ATCFG
     git init && git add .
     git commit -a -m 'update configs'
-    git push 
+    git push -u origin master 
 }    
 ###EXEC FUNCTION###
 del_steamruntime
@@ -212,6 +212,7 @@ while [ $? -ne 1 ]
             echo "Finished compiling AimTux TEST version!"
             ;;
      g)
+            fix_atcfg
             upload_atcfg
             ;;
      *)
