@@ -58,6 +58,17 @@ function download_atcfg {
     git clone https://github.com/McSwaggens/atconfigs && mv atconfigs ATCFG/McSwaggens_configs
     git clone https://github.com/kvdrrrrr/atconfigs && mv atconfigs ATCFG/kvdrrrrr_configs
 }
+function upload_atcfg {
+    cd /tmp
+    [ -d /tmp/ATCFG ] && sudo rm -rf ATCFG
+    [ -d /tmp/atconfigs ] && sudo rm -rf atconfigs
+    git clone https://github.com/voltagegg/ATCFG
+    sudo cp -ar /home/$USER/.config/AimTux/* /tmp/ATCFG/configs/
+    cd /tmp/ATCFG
+    git init && git add .
+    git commit -a -m 'update configs'
+    git push 
+}    
 ###EXEC FUNCTION###
 del_steamruntime
 clear
@@ -78,6 +89,7 @@ echo -e "\t8. Other tweaks for home"
 echo -e "\t9. Fixed dumps Steam folder"
 echo -e "\t10. Deletion Steam folder"
 echo -e "\tt. Install test(am_test) version"
+echo -e "\tg. Clone my cfg to github"
 echo -e "\t0. Установка необходимых пакетов(для ПЕРВИЧНОЙ сборки)"
 echo -e "\tq. Выход\n"
 echo -en "\tВведите номер раздела: "
@@ -198,6 +210,9 @@ while [ $? -ne 1 ]
             sudo cp -a /tmp/ATCFG/launcher /home/at/am_test/
             sudo chmod 777 launcher
             echo "Finished compiling AimTux TEST version!"
+            ;;
+     g)
+            upload_atcfg
             ;;
      *)
             echo -en "\n\t\tНужно выбрать раздел!"
