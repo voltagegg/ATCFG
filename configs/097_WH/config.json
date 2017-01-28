@@ -912,13 +912,14 @@
       }
    },
    "AutoAccept" : {
-      "enabled" : false
+      "enabled" : true
    },
    "AutoDefuse" : {
       "enabled" : false
    },
    "AutoStrafe" : {
       "enabled" : false,
+      "silent" : true,
       "type" : 0
    },
    "Autoblock" : {
@@ -964,6 +965,10 @@
             "type" : 0
          },
          "enabled" : true,
+         "hp_ally_color" : false,
+         "hp_ally_visible_color" : false,
+         "hp_enemy_color" : false,
+         "hp_enemy_visible_color" : false,
          "players_ally_color" : {
             "a" : 1,
             "b" : 0.65882354974746704,
@@ -1051,6 +1056,9 @@
             "g" : 0,
             "r" : 0.78431379795074463
          },
+         "hp_ally_color" : false,
+         "hp_enemy_color" : false,
+         "hp_enemy_visible_color" : false,
          "weapon_color" : {
             "a" : 0.78431379795074463,
             "b" : 0.19607844948768616,
@@ -1059,6 +1067,9 @@
          }
       },
       "Hitmarker" : {
+         "Damage" : {
+            "enabled" : false
+         },
          "allies" : false,
          "color" : {
             "a" : 1,
@@ -1197,6 +1208,14 @@
          "g" : 0.18823531270027161,
          "r" : 0.9490196704864502
       },
+      "hp_ally_color" : false,
+      "hp_ally_visible_color" : false,
+      "hp_ct_color" : false,
+      "hp_ct_visible_color" : false,
+      "hp_enemy_color" : false,
+      "hp_enemy_visible_color" : false,
+      "hp_t_color" : false,
+      "hp_t_visible_color" : false,
       "molotov_color" : {
          "a" : 1,
          "b" : 0.086274512112140656,
@@ -1240,8 +1259,13 @@
       "viewmodel_value" : 90
    },
    "FakeLag" : {
+      "adaptive" : false,
       "enabled" : false,
       "value" : 5
+   },
+   "NameStealer" : {
+      "enabled" : false,
+      "team" : 1
    },
    "NoScopeBorder" : {
       "enabled" : false
@@ -1267,21 +1291,79 @@
          "enabled" : true
       },
       "allies" : false,
-      "ally_color" : null,
-      "ally_visible_color" : null,
-      "bomb_color" : null,
-      "bomb_defusing_color" : null,
-      "ct_color" : null,
-      "ct_visible_color" : null,
+      "ally_color" : {
+         "a" : 1,
+         "b" : 0.75294125080108643,
+         "g" : 0.25098040699958801,
+         "r" : 0.12549020349979401
+      },
+      "ally_visible_color" : {
+         "a" : 1,
+         "b" : 0.75294125080108643,
+         "g" : 0.25098040699958801,
+         "r" : 0.12549020349979401
+      },
+      "bomb_color" : {
+         "a" : 1,
+         "b" : 0.25098040699958801,
+         "g" : 0.75294125080108643,
+         "r" : 0.75294125080108643
+      },
+      "bomb_defusing_color" : {
+         "a" : 1,
+         "b" : 0.25098040699958801,
+         "g" : 0.75294125080108643,
+         "r" : 0.75294125080108643
+      },
+      "ct_color" : {
+         "a" : 1,
+         "b" : 0.75294125080108643,
+         "g" : 0.50196081399917603,
+         "r" : 0.25098040699958801
+      },
+      "ct_visible_color" : {
+         "a" : 1,
+         "b" : 0.75294125080108643,
+         "g" : 0.50196081399917603,
+         "r" : 0.25098040699958801
+      },
       "enabled" : false,
       "enemies" : false,
-      "enemy_color" : null,
-      "enemy_visible_color" : null,
+      "enemy_color" : {
+         "a" : 1,
+         "b" : 0.12549020349979401,
+         "g" : 0.12549020349979401,
+         "r" : 0.75294125080108643
+      },
+      "enemy_visible_color" : {
+         "a" : 1,
+         "b" : 0.12549020349979401,
+         "g" : 0.12549020349979401,
+         "r" : 0.75294125080108643
+      },
+      "hp_ally_color" : false,
+      "hp_ally_visible_color" : false,
+      "hp_ct_color" : false,
+      "hp_ct_visible_color" : false,
+      "hp_enemy_color" : false,
+      "hp_enemy_visible_color" : false,
+      "hp_t_color" : false,
+      "hp_t_visible_color" : false,
       "icons_scale" : 4.5,
       "legit" : false,
       "smoke_check" : false,
-      "t_color" : null,
-      "t_visible_color" : null,
+      "t_color" : {
+         "a" : 1,
+         "b" : 0.25098040699958801,
+         "g" : 0.50196081399917603,
+         "r" : 0.75294125080108643
+      },
+      "t_visible_color" : {
+         "a" : 1,
+         "b" : 0.25098040699958801,
+         "g" : 0.50196081399917603,
+         "r" : 0.75294125080108643
+      },
       "visibility_check" : false,
       "zoom" : 16
    },

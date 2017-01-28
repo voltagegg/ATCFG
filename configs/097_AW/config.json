@@ -289,7 +289,7 @@
             "RCS" : {
                "AlwaysOn" : false,
                "Amount" : 2,
-               "Enabled" : false
+               "Enabled" : true
             },
             "Silent" : true,
             "SmokeCheck" : {
@@ -304,7 +304,7 @@
                },
                "Type" : 0
             },
-            "TargetBone" : 8
+            "TargetBone" : 7
          },
          "WEAPON_G3SG1" : {
             "AimKey" : "MOUSE3",
@@ -328,9 +328,9 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ true, false, false, false, false, false ],
-               "Enabled" : true,
-               "Value" : 10.37700080871582
+               "Bones" : [ true, true, true, true, true, true ],
+               "Enabled" : false,
+               "Value" : 0.31400001049041748
             },
             "Enabled" : true,
             "ErrorMargin" : {
@@ -362,7 +362,7 @@
                },
                "Type" : 0
             },
-            "TargetBone" : 8
+            "TargetBone" : 5
          },
          "WEAPON_GLOCK" : {
             "AimKey" : "MOUSE3",
@@ -579,7 +579,7 @@
             "RCS" : {
                "AlwaysOn" : false,
                "Amount" : 2,
-               "Enabled" : false
+               "Enabled" : true
             },
             "Silent" : true,
             "SmokeCheck" : {
@@ -594,7 +594,7 @@
                },
                "Type" : 0
             },
-            "TargetBone" : 8
+            "TargetBone" : 7
          },
          "WEAPON_SCAR20" : {
             "AimKey" : "MOUSE3",
@@ -618,9 +618,9 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ true, false, false, false, false, false ],
-               "Enabled" : true,
-               "Value" : 10.37700080871582
+               "Bones" : [ true, true, true, true, true, true ],
+               "Enabled" : false,
+               "Value" : 2.8300001621246338
             },
             "Enabled" : true,
             "ErrorMargin" : {
@@ -652,7 +652,7 @@
                },
                "Type" : 0
             },
-            "TargetBone" : 8
+            "TargetBone" : 5
          },
          "WEAPON_SSG08" : {
             "AimKey" : "MOUSE3",
@@ -676,8 +676,8 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ true, false, false, false, false, false ],
-               "Enabled" : true,
+               "Bones" : [ false, false, false, false, false, false ],
+               "Enabled" : false,
                "Value" : 85.220001220703125
             },
             "Enabled" : true,
@@ -710,7 +710,7 @@
                },
                "Type" : 0
             },
-            "TargetBone" : 8
+            "TargetBone" : 6
          },
          "WEAPON_TEC9" : {
             "AimKey" : "MOUSE3",
@@ -753,7 +753,7 @@
             "RCS" : {
                "AlwaysOn" : false,
                "Amount" : 2,
-               "Enabled" : false
+               "Enabled" : true
             },
             "Silent" : true,
             "SmokeCheck" : {
@@ -761,14 +761,14 @@
             },
             "Smooth" : {
                "Amount" : 1,
-               "Enabled" : false,
+               "Enabled" : true,
                "Salting" : {
                   "Enabled" : false,
                   "Multiplier" : 0
                },
                "Type" : 0
             },
-            "TargetBone" : 8
+            "TargetBone" : 7
          },
          "WEAPON_UMP45" : {
             "AimKey" : "MOUSE3",
@@ -869,7 +869,7 @@
             "RCS" : {
                "AlwaysOn" : false,
                "Amount" : 2,
-               "Enabled" : false
+               "Enabled" : true
             },
             "Silent" : true,
             "SmokeCheck" : {
@@ -884,7 +884,7 @@
                },
                "Type" : 0
             },
-            "TargetBone" : 8
+            "TargetBone" : 7
          }
       }
    },
@@ -943,7 +943,7 @@
    "ESP" : {
       "Bars" : {
          "color_type" : 1,
-         "enabled" : true,
+         "enabled" : false,
          "type" : 2
       },
       "Boxes" : {
@@ -951,7 +951,7 @@
          "type" : 1
       },
       "BulletTracers" : {
-         "enabled" : true
+         "enabled" : false
       },
       "Chams" : {
          "Arms" : {
@@ -993,7 +993,7 @@
             "g" : 0.62352943420410156,
             "r" : 0.95294123888015747
          },
-         "type" : 3
+         "type" : 2
       },
       "FOVCrosshair" : {
          "color" : {
@@ -1014,8 +1014,8 @@
          "hostages" : false,
          "legit" : false,
          "smoke_check" : true,
-         "throwables" : true,
-         "visibility_check" : false,
+         "throwables" : false,
+         "visibility_check" : true,
          "weapons" : false
       },
       "Glow" : {
@@ -1085,20 +1085,20 @@
       },
       "Info" : {
          "clan" : false,
-         "defusing" : true,
-         "flashed" : true,
+         "defusing" : false,
+         "flashed" : false,
          "grabbing_hostage" : false,
          "has_defuser" : false,
          "health" : false,
          "location" : false,
-         "name" : true,
-         "planting" : true,
+         "name" : false,
+         "planting" : false,
          "rank" : false,
-         "reloading" : true,
+         "reloading" : false,
          "rescuing" : false,
-         "scoped" : true,
+         "scoped" : false,
          "steam_id" : false,
-         "weapon" : true
+         "weapon" : false
       },
       "Skeleton" : {
          "color" : {

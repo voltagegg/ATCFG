@@ -912,7 +912,7 @@
       }
    },
    "AutoAccept" : {
-      "enabled" : false
+      "enabled" : true
    },
    "AutoDefuse" : {
       "enabled" : false
@@ -1259,6 +1259,7 @@
       "viewmodel_value" : 90
    },
    "FakeLag" : {
+      "adaptive" : false,
       "enabled" : false,
       "value" : 5
    },
