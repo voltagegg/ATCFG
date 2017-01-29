@@ -1028,7 +1028,7 @@
    },
    "FakeLag" : {
       "adaptive" : false,
-      "enabled" : true,
+      "enabled" : false,
       "value" : 4
    },
    "NameStealer" : {
