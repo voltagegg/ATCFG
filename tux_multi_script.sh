@@ -90,6 +90,7 @@ echo -e "\t9. Fixed dumps Steam folder"
 echo -e "\t10. Deletion Steam folder"
 echo -e "\tt. Install test(am_test) version"
 echo -e "\tg. Clone my cfg to github"
+echo -e "\tu. Updating your compile Ubuntu"
 echo -e "\t0. Установка необходимых пакетов(для ПЕРВИЧНОЙ сборки)"
 echo -e "\tq. Выход\n"
 echo -en "\tВведите номер раздела: "
@@ -110,6 +111,7 @@ while [ $? -ne 1 ]
                 sudo pacman -Syu base-devel cmake gdb git sdl2 xdotool
             fi
             if [ -e "/etc/debian_version" ]; then
+
                 sudo apt-get update
                 sudo apt-get install -y cmake g++ gdb git libsdl2-dev zlib1g-dev libxdo-dev
             fi
@@ -214,6 +216,13 @@ while [ $? -ne 1 ]
      g)
             fix_atcfg
             upload_atcfg
+            ;;
+     u)
+            sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+            sudo apt-get update
+            sudo apt-get install gcc-6 g++-6
+            sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
+            echo "Finished pre-install packages!"
             ;;
      *)
             echo -en "\n\t\tНужно выбрать раздел!"
