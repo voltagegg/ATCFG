@@ -1,4 +1,11 @@
 #!/bin/bash
+###STEAM FIX###
+function fix_dumps {
+    [ ! -d /tmp/dumps ] && sudo mkdir /tmp/dumps
+    sudo rm -rf /tmp/dumps/*
+    sudo chmod 600 /tmp/dumps
+}
+fix_dumps
 ###MENU AIMTUX###
 function menu {
 clear
