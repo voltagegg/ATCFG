@@ -1,16 +1,12 @@
 #!/bin/bash
 ##DATE=`/bin/date '+%d%m'`
-###UPGRADE OS & DEL STEAM-RUNTIME###
-function arch_upgrade {
+###UPGRADE DIST & DEL STEAM-RUNTIME###
+function dist_upgrade {
     if [ -e "/etc/manjaro-release" ]; then
         sudo pacman -Syua
-    fi
-    if [ -e "/etc/arch-release" ]; then
-        sudo pacman -Syu
-    fi
-}
-function deb_upgrade {
-    if [ -e "/etc/debian_version" ]; then
+    elif [ -e "/etc/arch-release" ]; then
+        sudo pacman -Syua
+    elif [ -e "/etc/debian_version" ]; then
         sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -fy &&
         sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean
     fi
@@ -35,6 +31,15 @@ function fix_library {
     sudo chown -R $USER:$USER /home/SteamLibrary
     sudo chmod -R 777 /home/SteamLibrary
 }
+function del_steam {
+    if [ -e "/etc/manjaro-release" ]; then
+        sudo pacman -Rs steam
+    elif [ -e "/etc/arch-release" ]; then
+        sudo pacman -Rs steam steam-native-runtime
+    elif [ -e "/etc/debian_version" ]; then
+        sudo apt-get purge steam:i386
+    fi
+}
 ###AIMTUX FIX###
 function fix_at {
     [ ! -d /home/at ] && sudo mkdir /home/at
@@ -50,6 +55,7 @@ function fix_atcfg {
     sudo chown -R $USER:$USER /home/$USER/.config/AimTux
     sudo chmod -R 777 /home/$USER/.config/AimTux
 }
+###CONFIGS###
 function download_atcfg {
     cd /tmp
     [ -d /tmp/ATCFG ] && sudo rm -rf ATCFG
@@ -88,13 +94,13 @@ echo -e "\t4. Удаление всех версий AimTux в (/home/at/*)\n"
 echo -e "\t5. Установка конфигов AimTux"
 echo -e "\t6. Удаление всех конфигов AimTux"
 echo -e "\t7. Полное обновление системы Ubuntu/Debian/Arch\n"
-echo -e "\t8. Other tweaks for home"
-echo -e "\t9. Fixed dumps Steam folder"
-echo -e "\t10. Deletion Steam folder"
+echo -e "\tp. Install required packages(for the PRIMARY Assembly)"
+echo -e "\tu. Updating your compile Ubuntu\n"
 echo -e "\tt. Install test(am_test) version"
+echo -e "\tf. Fixed dumps Steam folder"
+echo -e "\to. Other tweaks for home"
 echo -e "\tg. Clone my cfg to github"
-echo -e "\tu. Updating your compile Ubuntu"
-echo -e "\tp. Install required packages(for the PRIMARY Assembly)\n"
+echo -e "\tD. Deletion Steam\n"
 echo -e "\tq. Выход\n"
 echo -en "\tВведите номер раздела: "
 read option
@@ -105,20 +111,6 @@ while [ $? -ne 1 ]
         case $option in
      q)
             break 
-            ;;
-     0)
-            if [ -e "/etc/manjaro-release" ]; then
-                sudo pacman -Syu base-devel cmake gdb git sdl2 xdotool
-            fi
-            if [ -e "/etc/arch-release" ]; then
-                sudo pacman -Syu base-devel cmake gdb git sdl2 xdotool
-            fi
-            if [ -e "/etc/debian_version" ]; then
-
-                sudo apt-get update
-                sudo apt-get install -y cmake g++ gdb git libsdl2-dev zlib1g-dev libxdo-dev
-            fi
-            echo "Finished pre-install packages!"
             ;;
      1)
             echo "Compiling AimTux new version..."
@@ -144,7 +136,7 @@ while [ $? -ne 1 ]
             make -j 4
             sudo cp -a /tmp/ATCFG/launcher /home/at/am_stable/
             sudo chmod 777 launcher
-            echo "Finished compiling AimTux stable version!"
+            c
             ;;
      3)
             echo "Compiling AimTux FACEIT version..."
@@ -176,22 +168,24 @@ while [ $? -ne 1 ]
             echo "Finished deletion configs!"
             ;;
      7)
-            deb_upgrade
-            arch_upgrade
+            dist_upgrade
             echo "Finished upgrade system!"
             ;;
-     8)
-            [ ! -d /home/SOFT ] && sudo mkdir /home/SOFT
-            sudo chmod -R 777 /home/SOFT
-            echo "Finished other tweaks!"
+     p)
+            if [ -e "/etc/manjaro-release" ]; then
+                sudo pacman -Syu cmake gdb git sdl2 xdotool
+            elif [ -e "/etc/arch-release" ]; then
+                sudo pacman -Syu base-devel cmake gdb git sdl2 xdotool
+            elif [ -e "/etc/debian_version" ]; then
+                sudo apt-get update && sudo apt-get install -y cmake g++ gdb git libsdl2-dev zlib1g-dev libxdo-de
+            fi
+            echo "Finished pre-install packages!"
             ;;
-     9)
-            fix_dumps
-            echo "Finished fixed dumps Steam!"
-            ;;
-    10)
-            sudo rm -rf /home/$USER/Steam && sudo rm -rf /home/$USER/.steam
-            echo "Finished deletion Steam folders!"
+     u)
+            sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+            sudo apt-get update
+            sudo apt-get install gcc-6 g++-6
+            sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
             ;;
      t)
             echo "Compiling AimTux TEST version..."
@@ -206,15 +200,23 @@ while [ $? -ne 1 ]
             sudo chmod 777 launcher
             echo "Finished compiling AimTux TEST version!"
             ;;
+     f)
+            sudo ln -s /dev/null /tmp/dumps
+            echo "Finished fixed dumps Steam!"
+            ;;
+     o)
+            [ ! -d /home/SOFT ] && sudo mkdir /home/SOFT
+            sudo chmod -R 777 /home/SOFT
+            echo "Finished other tweaks!"
+            ;;
      g)
             fix_atcfg
             upload_atcfg
             ;;
-     u)
-            sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-            sudo apt-get update
-            sudo apt-get install gcc-6 g++-6
-            sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
+     D)     
+            del_steam
+            sudo rm -rf /home/$USER/Steam && sudo rm -rf /home/$USER/.steam
+            echo "Finished deletion Steam!"
             ;;
      *)
             echo -en "\n\t\tНужно выбрать раздел!"
