@@ -33,9 +33,9 @@ function fix_library {
 }
 function del_steam {
     if [ -e "/etc/manjaro-release" ]; then
-        sudo pacman -Rs steam
+        sudo pacman -R steam-native steam-manjaro
     elif [ -e "/etc/arch-release" ]; then
-        sudo pacman -Rs steam steam-native-runtime
+        sudo pacman -R steam steam-native-runtime
     elif [ -e "/etc/debian_version" ]; then
         sudo apt-get purge steam:i386
     fi
