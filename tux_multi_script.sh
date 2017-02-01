@@ -3,7 +3,7 @@
 ###UPGRADE OS & DEL STEAM-RUNTIME###
 function arch_upgrade {
     if [ -e "/etc/manjaro-release" ]; then
-        sudo pacman -Syu
+        sudo pacman -Syua
     fi
     if [ -e "/etc/arch-release" ]; then
         sudo pacman -Syu
@@ -63,16 +63,19 @@ function upload_atcfg {
     [ -d /tmp/ATCFG ] && sudo rm -rf ATCFG
     [ -d /tmp/atconfigs ] && sudo rm -rf atconfigs
     git clone https://github.com/voltagegg/ATCFG
-    sudo cp -ar /home/$USER/.config/AimTux/* /tmp/ATCFG/configs/
+    cp -ar /home/$USER/.config/AimTux/* /tmp/ATCFG/configs/
     cd /tmp/ATCFG
-    git init && git add .
+    git init
+    git add .
     git commit -a -m 'update configs'
     git push -u origin master 
 }    
 ###EXEC FUNCTION###
 del_steamruntime
 clear
+fix_dumps
 fix_library
+fix_atcfg
 ###MENU###
 function menu {
 clear
@@ -81,17 +84,17 @@ echo -e "\t\t\tМеню скрипта\n"
 echo -e "\t1. Установка новой версии AimTux в (/home/at/am_new)"
 echo -e "\t2. Установка старой версии AimTux в (/home/at/am_stable)"
 echo -e "\t3. Установка FACEIT версии AimTux в (/home/at/am_faceit)"
-echo -e "\t4. Удаление всех версий AimTux в (/home/at/*)"
+echo -e "\t4. Удаление всех версий AimTux в (/home/at/*)\n"
 echo -e "\t5. Установка конфигов AimTux"
 echo -e "\t6. Удаление всех конфигов AimTux"
-echo -e "\t7. Полное обновление системы Ubuntu/Debian/Arch"
+echo -e "\t7. Полное обновление системы Ubuntu/Debian/Arch\n"
 echo -e "\t8. Other tweaks for home"
 echo -e "\t9. Fixed dumps Steam folder"
 echo -e "\t10. Deletion Steam folder"
 echo -e "\tt. Install test(am_test) version"
 echo -e "\tg. Clone my cfg to github"
 echo -e "\tu. Updating your compile Ubuntu"
-echo -e "\t0. Установка необходимых пакетов(для ПЕРВИЧНОЙ сборки)"
+echo -e "\tp. Install required packages(for the PRIMARY Assembly)\n"
 echo -e "\tq. Выход\n"
 echo -en "\tВведите номер раздела: "
 read option
@@ -119,8 +122,6 @@ while [ $? -ne 1 ]
             ;;
      1)
             echo "Compiling AimTux new version..."
-            fix_at
-            fix_dumps
             download_atcfg
             [ -d /home/at/am_new ] && sudo rm -rf /home/at/am_new            
             git clone --recursive https://github.com/AimTuxOfficial/AimTux
@@ -134,8 +135,6 @@ while [ $? -ne 1 ]
             ;;
      2)
             echo "Compiling AimTux stable version..."
-            fix_at
-            fix_dumps
             download_atcfg
             [ -d /home/at/am_stable ] && sudo rm -rf /home/at/am_stable
             wget https://github.com/AimTuxOfficial/AimTux/archive/v1.0.zip && unzip v1.0.zip
@@ -149,8 +148,6 @@ while [ $? -ne 1 ]
             ;;
      3)
             echo "Compiling AimTux FACEIT version..."
-            fix_at
-            fix_dumps
             download_atcfg
             [ -d /home/at/am_faceit ] && sudo rm -rf /home/at/am_faceit
             git clone --recursive -b faceit https://github.com/AimTuxOfficial/AimTux
@@ -168,8 +165,6 @@ while [ $? -ne 1 ]
             ;;
      5)
             echo "Install Configs..."
-            fix_atcfg
-            fix_dumps
             download_atcfg
             sudo cp -ar /tmp/ATCFG/configs/* /home/$USER/.config/AimTux/
             sudo cp -ar /tmp/ATCFG/McSwaggens_configs/configs/* /home/$USER/.config/AimTux/
@@ -200,8 +195,6 @@ while [ $? -ne 1 ]
             ;;
      t)
             echo "Compiling AimTux TEST version..."
-            fix_at
-            fix_dumps
             download_atcfg
             [ -d /home/at/am_test ] && sudo rm -rf /home/at/am_test
             git clone --recursive -b gloves https://github.com/AimTuxOfficial/AimTux
@@ -222,7 +215,6 @@ while [ $? -ne 1 ]
             sudo apt-get update
             sudo apt-get install gcc-6 g++-6
             sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
-            echo "Finished pre-install packages!"
             ;;
      *)
             echo -en "\n\t\tНужно выбрать раздел!"
