@@ -177,7 +177,7 @@ while [ $? -ne 1 ]
             elif [ -e "/etc/arch-release" ]; then
                 sudo pacman -Syu base-devel cmake gdb git sdl2 xdotool
             elif [ -e "/etc/debian_version" ]; then
-                sudo apt-get update && sudo apt-get install -y cmake g++ gdb git libsdl2-dev zlib1g-dev libxdo-de
+                sudo apt-get update && sudo apt-get install -y cmake g++ gdb git libsdl2-dev zlib1g-dev libxdo-dev
             fi
             echo "Finished pre-install packages!"
             ;;
