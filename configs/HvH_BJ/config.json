@@ -56,7 +56,8 @@
             },
             "RCS" : {
                "AlwaysOn" : true,
-               "Amount" : 2,
+               "AmountX" : 2,
+               "AmountY" : 2,
                "Enabled" : true
             },
             "Silent" : true,
@@ -114,7 +115,8 @@
             },
             "RCS" : {
                "AlwaysOn" : false,
-               "Amount" : 0,
+               "AmountX" : 0,
+               "AmountY" : 0,
                "Enabled" : false
             },
             "Silent" : true,
@@ -172,7 +174,8 @@
             },
             "RCS" : {
                "AlwaysOn" : true,
-               "Amount" : 2,
+               "AmountX" : 2,
+               "AmountY" : 2,
                "Enabled" : true
             },
             "Silent" : true,
@@ -206,7 +209,7 @@
                "Enabled" : true
             },
             "AutoScope" : {
-               "Enabled" : true
+               "Enabled" : false
             },
             "AutoShoot" : {
                "Enabled" : true
@@ -230,7 +233,8 @@
             },
             "RCS" : {
                "AlwaysOn" : true,
-               "Amount" : 2,
+               "AmountX" : 2,
+               "AmountY" : 2,
                "Enabled" : true
             },
             "Silent" : true,
@@ -288,7 +292,8 @@
             },
             "RCS" : {
                "AlwaysOn" : true,
-               "Amount" : 2,
+               "AmountX" : 2,
+               "AmountY" : 2,
                "Enabled" : true
             },
             "Silent" : true,
@@ -304,7 +309,7 @@
                },
                "Type" : 0
             },
-            "TargetBone" : 7
+            "TargetBone" : 8
          },
          "WEAPON_SCAR20" : {
             "AimKey" : "MOUSE3",
@@ -346,7 +351,8 @@
             },
             "RCS" : {
                "AlwaysOn" : true,
-               "Amount" : 2,
+               "AmountX" : 2,
+               "AmountY" : 2,
                "Enabled" : true
             },
             "Silent" : true,
@@ -362,7 +368,7 @@
                },
                "Type" : 0
             },
-            "TargetBone" : 7
+            "TargetBone" : 8
          },
          "WEAPON_SSG08" : {
             "AimKey" : "MOUSE3",
@@ -404,7 +410,8 @@
             },
             "RCS" : {
                "AlwaysOn" : true,
-               "Amount" : 2,
+               "AmountX" : 2,
+               "AmountY" : 2,
                "Enabled" : true
             },
             "Silent" : true,
@@ -499,6 +506,15 @@
             },
             "enabled" : false,
             "type" : 0
+         },
+         "Weapon" : {
+            "color" : {
+               "a" : 1,
+               "b" : 1,
+               "g" : 1,
+               "r" : 1
+            },
+            "enabled" : false
          },
          "enabled" : true,
          "hp_ally_color" : false,
@@ -601,6 +617,10 @@
             "g" : 0,
             "r" : 0.78431379795074463
          }
+      },
+      "Headdot" : {
+         "enabled" : false,
+         "size" : 2
       },
       "Hitmarker" : {
          "Damage" : {
@@ -919,12 +939,14 @@
       "enabled" : false
    },
    "Skinchanger" : {
+      "Gloves" : {
+         "enabled" : false
+      },
       "enabled" : false,
       "skins" : {
          "WEAPON_AK47" : {
             "CustomName" : "AimTux",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : 524,
             "Seed" : 0,
             "StatTrak" : 1337,
@@ -932,8 +954,7 @@
          },
          "WEAPON_AWP" : {
             "CustomName" : "AimTux",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : 344,
             "Seed" : 0,
             "StatTrak" : 1337,
@@ -941,8 +962,7 @@
          },
          "WEAPON_DEAGLE" : {
             "CustomName" : "AimTux",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : 277,
             "Seed" : 0,
             "StatTrak" : 1337,
@@ -950,8 +970,7 @@
          },
          "WEAPON_ELITE" : {
             "CustomName" : "AimTux",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : 249,
             "Seed" : 0,
             "StatTrak" : 1337,
@@ -959,8 +978,7 @@
          },
          "WEAPON_FIVESEVEN" : {
             "CustomName" : "AimTux",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : 252,
             "Seed" : 0,
             "StatTrak" : 1337,
@@ -968,8 +986,7 @@
          },
          "WEAPON_GLOCK" : {
             "CustomName" : "AimTux",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : 38,
             "Seed" : 0,
             "StatTrak" : 1337,
@@ -978,7 +995,6 @@
          "WEAPON_KNIFE" : {
             "CustomName" : "AimTux",
             "ItemDefinitionIndex" : "WEAPON_KNIFE_M9_BAYONET",
-            "Model" : "",
             "PaintKit" : 417,
             "Seed" : 0,
             "StatTrak" : 1337,
@@ -986,8 +1002,7 @@
          },
          "WEAPON_KNIFE_BAYONET" : {
             "CustomName" : "",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "models/weapons/v_knife_bayonet.mdl",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : -1,
             "Seed" : -1,
             "StatTrak" : -1,
@@ -995,8 +1010,7 @@
          },
          "WEAPON_KNIFE_BUTTERFLY" : {
             "CustomName" : "",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "models/weapons/v_knife_butterfly.mdl",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : -1,
             "Seed" : -1,
             "StatTrak" : -1,
@@ -1004,8 +1018,7 @@
          },
          "WEAPON_KNIFE_FALCHION" : {
             "CustomName" : "",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "models/weapons/v_knife_falchion_advanced.mdl",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : -1,
             "Seed" : -1,
             "StatTrak" : -1,
@@ -1013,8 +1026,7 @@
          },
          "WEAPON_KNIFE_FLIP" : {
             "CustomName" : "",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "models/weapons/v_knife_flip.mdl",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : -1,
             "Seed" : -1,
             "StatTrak" : -1,
@@ -1022,8 +1034,7 @@
          },
          "WEAPON_KNIFE_GUT" : {
             "CustomName" : "",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "models/weapons/v_knife_gut.mdl",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : -1,
             "Seed" : -1,
             "StatTrak" : -1,
@@ -1031,8 +1042,7 @@
          },
          "WEAPON_KNIFE_KARAMBIT" : {
             "CustomName" : "",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "models/weapons/v_knife_karam.mdl",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : -1,
             "Seed" : -1,
             "StatTrak" : -1,
@@ -1040,8 +1050,7 @@
          },
          "WEAPON_KNIFE_M9_BAYONET" : {
             "CustomName" : "",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "models/weapons/v_knife_m9_bay.mdl",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : -1,
             "Seed" : -1,
             "StatTrak" : -1,
@@ -1049,8 +1058,7 @@
          },
          "WEAPON_KNIFE_PUSH" : {
             "CustomName" : "",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "models/weapons/v_knife_push.mdl",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : -1,
             "Seed" : -1,
             "StatTrak" : -1,
@@ -1058,8 +1066,7 @@
          },
          "WEAPON_KNIFE_SURVIVAL_BOWIE" : {
             "CustomName" : "",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "models/weapons/v_knife_survival_bowie.mdl",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : -1,
             "Seed" : -1,
             "StatTrak" : -1,
@@ -1068,7 +1075,6 @@
          "WEAPON_KNIFE_T" : {
             "CustomName" : "AimTux",
             "ItemDefinitionIndex" : "WEAPON_KNIFE_KARAMBIT",
-            "Model" : "",
             "PaintKit" : 417,
             "Seed" : 0,
             "StatTrak" : 1337,
@@ -1076,8 +1082,7 @@
          },
          "WEAPON_KNIFE_TACTICAL" : {
             "CustomName" : "",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "models/weapons/v_knife_tactical.mdl",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : -1,
             "Seed" : -1,
             "StatTrak" : -1,
@@ -1085,8 +1090,7 @@
          },
          "WEAPON_M4A1" : {
             "CustomName" : "AimTux",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : 512,
             "Seed" : 0,
             "StatTrak" : 1337,
@@ -1094,8 +1098,7 @@
          },
          "WEAPON_M4A1_SILENCER" : {
             "CustomName" : "AimTux",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : 548,
             "Seed" : 0,
             "StatTrak" : 1337,
@@ -1103,8 +1106,7 @@
          },
          "WEAPON_SCAR20" : {
             "CustomName" : "AimTux",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : 391,
             "Seed" : 0,
             "StatTrak" : 1337,
@@ -1112,8 +1114,7 @@
          },
          "WEAPON_SSG08" : {
             "CustomName" : "AimTux",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : 319,
             "Seed" : 0,
             "StatTrak" : 1337,
@@ -1121,8 +1122,7 @@
          },
          "WEAPON_TEC9" : {
             "CustomName" : "AimTux",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : 179,
             "Seed" : 0,
             "StatTrak" : 1337,
@@ -1130,8 +1130,7 @@
          },
          "WEAPON_USP_SILENCER" : {
             "CustomName" : "AimTux",
-            "ItemDefinitionIndex" : "ITEM_INVALID",
-            "Model" : "",
+            "ItemDefinitionIndex" : "",
             "PaintKit" : 332,
             "Seed" : 0,
             "StatTrak" : 1337,
