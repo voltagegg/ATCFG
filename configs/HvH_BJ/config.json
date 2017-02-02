@@ -97,7 +97,7 @@
                "Enabled" : false
             },
             "AutoWall" : {
-               "Bones" : [ false, true, true, true, false, false ],
+               "Bones" : [ true, true, true, true, false, false ],
                "Enabled" : true,
                "Value" : 0.31400001049041748
             },
