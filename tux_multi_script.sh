@@ -114,6 +114,7 @@ while [ $? -ne 1 ]
             ;;
      1)
             echo "Compiling AimTux new version..."
+            fix_at
             download_atcfg
             [ -d /home/at/am_new ] && sudo rm -rf /home/at/am_new            
             git clone --recursive https://github.com/AimTuxOfficial/AimTux
@@ -127,6 +128,7 @@ while [ $? -ne 1 ]
             ;;
      2)
             echo "Compiling AimTux stable version..."
+            fix_at
             download_atcfg
             [ -d /home/at/am_stable ] && sudo rm -rf /home/at/am_stable
             wget https://github.com/AimTuxOfficial/AimTux/archive/v1.0.zip && unzip v1.0.zip
@@ -140,6 +142,7 @@ while [ $? -ne 1 ]
             ;;
      3)
             echo "Compiling AimTux FACEIT version..."
+            fix_at
             download_atcfg
             [ -d /home/at/am_faceit ] && sudo rm -rf /home/at/am_faceit
             git clone --recursive -b faceit https://github.com/AimTuxOfficial/AimTux
@@ -189,6 +192,7 @@ while [ $? -ne 1 ]
             ;;
      t)
             echo "Compiling AimTux TEST version..."
+            fix_at
             download_atcfg
             [ -d /home/at/am_test ] && sudo rm -rf /home/at/am_test
             git clone --recursive -b gloves https://github.com/AimTuxOfficial/AimTux
