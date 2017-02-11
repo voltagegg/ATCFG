@@ -15,7 +15,7 @@
       "weapons" : {
          "ITEM_INVALID" : {
             "AimKey" : "MOUSE1",
-            "AimKeyOnly" : false,
+            "AimKeyOnly" : true,
             "AimStep" : {
                "Amount" : 25,
                "Enabled" : false
@@ -41,14 +41,14 @@
             "AutoWall" : {
                "Bones" : [ true, true, true, true, true, true ],
                "Enabled" : true,
-               "Value" : 9.9999997473787516e-05
+               "Value" : 0.10000000149011612
             },
             "Enabled" : true,
             "ErrorMargin" : {
                "Enabled" : false,
                "Value" : 0.34300002455711365
             },
-            "Friendly" : false,
+            "Friendly" : true,
             "IgnoreJump" : {
                "Enabled" : false
             },
@@ -277,16 +277,16 @@
          "no_enemy" : false
       },
       "HeadEdge" : {
-         "distance" : 21,
-         "enabled" : false
+         "distance" : 26,
+         "enabled" : true
       },
       "Pitch" : {
          "enabled" : true,
-         "type" : 7
+         "type" : 1
       },
       "Yaw" : {
          "enabled" : true,
-         "type" : 13,
+         "type" : 16,
          "type_fake" : 16
       }
    },
@@ -311,9 +311,9 @@
    "ClanTagChanger" : {
       "animation" : false,
       "animation_speed" : 650,
-      "enabled" : true,
+      "enabled" : false,
       "type" : 0,
-      "value" : "- Admin -"
+      "value" : ""
    },
    "Dlights" : {
       "enabled" : false,
@@ -400,7 +400,7 @@
          "enabled" : false
       },
       "Filters" : {
-         "allies" : false,
+         "allies" : true,
          "bomb" : true,
          "chickens" : false,
          "defusers" : true,
@@ -674,11 +674,11 @@
    },
    "FakeLag" : {
       "enabled" : false,
-      "value" : 6
+      "value" : 5
    },
    "NameStealer" : {
-      "enabled" : true,
-      "team" : 0
+      "enabled" : false,
+      "team" : 1
    },
    "NoScopeBorder" : {
       "enabled" : true
@@ -1125,11 +1125,11 @@
       "spammer_type" : 0
    },
    "Teleport" : {
-      "enabled" : true,
+      "enabled" : false,
       "key" : 109
    },
    "ThirdPerson" : {
-      "distance" : 90,
+      "distance" : 77,
       "enabled" : true
    },
    "Triggerbot" : {
