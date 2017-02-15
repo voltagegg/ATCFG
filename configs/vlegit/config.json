@@ -22,7 +22,7 @@
             },
             "AutoAim" : {
                "Enabled" : true,
-               "FOV" : 6,
+               "FOV" : 3.3580002784729004,
                "RealDistance" : true
             },
             "AutoPistol" : {
@@ -64,7 +64,7 @@
             "RCS" : {
                "AlwaysOn" : false,
                "AmountX" : 2,
-               "AmountY" : 2,
+               "AmountY" : 0.8330000638961792,
                "Enabled" : false
             },
             "Silent" : true,
@@ -1403,7 +1403,7 @@
          "smoke_check" : true,
          "throwables" : false,
          "visibility_check" : true,
-         "weapons" : false
+         "weapons" : true
       },
       "Glow" : {
          "ally_color" : {
@@ -1760,7 +1760,7 @@
       "hp_t_visible_color" : false,
       "icons_scale" : 4.5,
       "legit" : false,
-      "smoke_check" : true,
+      "smoke_check" : false,
       "t_color" : {
          "a" : 1,
          "b" : 0.25098034739494324,
@@ -1817,10 +1817,10 @@
          "WEAPON_AWP" : {
             "CustomName" : "",
             "ItemDefinitionIndex" : "WEAPON_AWP",
-            "PaintKit" : 446,
-            "Seed" : 0,
+            "PaintKit" : 344,
+            "Seed" : -1,
             "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
+            "Wear" : 0.004999999888241291
          },
          "WEAPON_BIZON" : {
             "CustomName" : "",
@@ -2138,12 +2138,12 @@
          "arms" : true,
          "chest" : true,
          "enemies" : true,
-         "flash_check" : false,
+         "flash_check" : true,
          "head" : true,
          "legs" : true,
-         "smoke_check" : false,
+         "smoke_check" : true,
          "stomach" : true,
-         "walls" : true
+         "walls" : false
       },
       "enabled" : true,
       "key" : "MOUSE5"
