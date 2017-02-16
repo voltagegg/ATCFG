@@ -12,9 +12,6 @@
       "AutoCrouch" : {
          "enabled" : false
       },
-      "AutoStop" : {
-         "enabled" : false
-      },
       "weapons" : {
          "ITEM_INVALID" : {
             "AimKey" : "MOUSE1",
@@ -37,6 +34,10 @@
             "AutoShoot" : {
                "Enabled" : false
             },
+            "AutoSlow" : {
+               "enabled" : false,
+               "speedPercent" : 0
+            },
             "AutoWall" : {
                "Bones" : [ true, false, false, false, false, false ],
                "Enabled" : false,
@@ -46,6 +47,9 @@
             "ErrorMargin" : {
                "Enabled" : true,
                "Value" : 0.34300002455711365
+            },
+            "FlashCheck" : {
+               "Enabled" : true
             },
             "Friendly" : false,
             "IgnoreJump" : {
@@ -96,6 +100,10 @@
             "AutoShoot" : {
                "Enabled" : false
             },
+            "AutoSlow" : {
+               "enabled" : false,
+               "speedPercent" : 0
+            },
             "AutoWall" : {
                "Bones" : [ false, false, false, false, false, false ],
                "Enabled" : false,
@@ -105,6 +113,9 @@
             "ErrorMargin" : {
                "Enabled" : false,
                "Value" : 0.34300002455711365
+            },
+            "FlashCheck" : {
+               "Enabled" : false
             },
             "Friendly" : false,
             "IgnoreJump" : {
@@ -155,6 +166,10 @@
             "AutoShoot" : {
                "Enabled" : false
             },
+            "AutoSlow" : {
+               "enabled" : false,
+               "speedPercent" : 0
+            },
             "AutoWall" : {
                "Bones" : [ true, false, false, false, false, false ],
                "Enabled" : false,
@@ -164,6 +179,9 @@
             "ErrorMargin" : {
                "Enabled" : true,
                "Value" : 0.34300002455711365
+            },
+            "FlashCheck" : {
+               "Enabled" : true
             },
             "Friendly" : false,
             "IgnoreJump" : {
@@ -214,6 +232,10 @@
             "AutoShoot" : {
                "Enabled" : false
             },
+            "AutoSlow" : {
+               "enabled" : false,
+               "speedPercent" : 0
+            },
             "AutoWall" : {
                "Bones" : [ true, false, false, false, false, false ],
                "Enabled" : false,
@@ -223,6 +245,9 @@
             "ErrorMargin" : {
                "Enabled" : false,
                "Value" : 0.34300002455711365
+            },
+            "FlashCheck" : {
+               "Enabled" : true
             },
             "Friendly" : false,
             "IgnoreJump" : {
@@ -273,6 +298,10 @@
             "AutoShoot" : {
                "Enabled" : false
             },
+            "AutoSlow" : {
+               "enabled" : false,
+               "speedPercent" : 0
+            },
             "AutoWall" : {
                "Bones" : [ true, false, false, false, false, false ],
                "Enabled" : false,
@@ -282,6 +311,9 @@
             "ErrorMargin" : {
                "Enabled" : true,
                "Value" : 0.34300002455711365
+            },
+            "FlashCheck" : {
+               "Enabled" : true
             },
             "Friendly" : false,
             "IgnoreJump" : {
@@ -332,6 +364,10 @@
             "AutoShoot" : {
                "Enabled" : false
             },
+            "AutoSlow" : {
+               "enabled" : false,
+               "speedPercent" : 0
+            },
             "AutoWall" : {
                "Bones" : [ true, false, false, false, false, false ],
                "Enabled" : false,
@@ -341,6 +377,9 @@
             "ErrorMargin" : {
                "Enabled" : false,
                "Value" : 0.34300002455711365
+            },
+            "FlashCheck" : {
+               "Enabled" : true
             },
             "Friendly" : false,
             "IgnoreJump" : {
@@ -391,6 +430,10 @@
             "AutoShoot" : {
                "Enabled" : false
             },
+            "AutoSlow" : {
+               "enabled" : false,
+               "speedPercent" : 0
+            },
             "AutoWall" : {
                "Bones" : [ true, false, false, false, false, false ],
                "Enabled" : false,
@@ -400,6 +443,9 @@
             "ErrorMargin" : {
                "Enabled" : false,
                "Value" : 0.34300002455711365
+            },
+            "FlashCheck" : {
+               "Enabled" : true
             },
             "Friendly" : false,
             "IgnoreJump" : {
@@ -450,6 +496,10 @@
             "AutoShoot" : {
                "Enabled" : false
             },
+            "AutoSlow" : {
+               "enabled" : false,
+               "speedPercent" : 0
+            },
             "AutoWall" : {
                "Bones" : [ true, false, false, false, false, false ],
                "Enabled" : false,
@@ -459,6 +509,9 @@
             "ErrorMargin" : {
                "Enabled" : false,
                "Value" : 0.34300002455711365
+            },
+            "FlashCheck" : {
+               "Enabled" : true
             },
             "Friendly" : false,
             "IgnoreJump" : {
@@ -509,6 +562,10 @@
             "AutoShoot" : {
                "Enabled" : false
             },
+            "AutoSlow" : {
+               "enabled" : false,
+               "speedPercent" : 0
+            },
             "AutoWall" : {
                "Bones" : [ true, false, false, false, false, false ],
                "Enabled" : false,
@@ -518,6 +575,9 @@
             "ErrorMargin" : {
                "Enabled" : false,
                "Value" : 0.34300002455711365
+            },
+            "FlashCheck" : {
+               "Enabled" : true
             },
             "Friendly" : false,
             "IgnoreJump" : {
@@ -568,6 +628,10 @@
             "AutoShoot" : {
                "Enabled" : false
             },
+            "AutoSlow" : {
+               "enabled" : false,
+               "speedPercent" : 0
+            },
             "AutoWall" : {
                "Bones" : [ true, false, false, false, false, false ],
                "Enabled" : false,
@@ -577,6 +641,9 @@
             "ErrorMargin" : {
                "Enabled" : true,
                "Value" : 0.34300002455711365
+            },
+            "FlashCheck" : {
+               "Enabled" : true
             },
             "Friendly" : false,
             "IgnoreJump" : {
@@ -627,6 +694,10 @@
             "AutoShoot" : {
                "Enabled" : false
             },
+            "AutoSlow" : {
+               "enabled" : false,
+               "speedPercent" : 0
+            },
             "AutoWall" : {
                "Bones" : [ true, false, false, false, false, false ],
                "Enabled" : false,
@@ -636,6 +707,9 @@
             "ErrorMargin" : {
                "Enabled" : true,
                "Value" : 0.34300002455711365
+            },
+            "FlashCheck" : {
+               "Enabled" : true
             },
             "Friendly" : false,
             "IgnoreJump" : {
@@ -686,6 +760,10 @@
             "AutoShoot" : {
                "Enabled" : false
             },
+            "AutoSlow" : {
+               "enabled" : false,
+               "speedPercent" : 0
+            },
             "AutoWall" : {
                "Bones" : [ true, false, false, false, false, false ],
                "Enabled" : false,
@@ -695,6 +773,9 @@
             "ErrorMargin" : {
                "Enabled" : false,
                "Value" : 0.34300002455711365
+            },
+            "FlashCheck" : {
+               "Enabled" : true
             },
             "Friendly" : false,
             "IgnoreJump" : {
@@ -745,6 +826,10 @@
             "AutoShoot" : {
                "Enabled" : false
             },
+            "AutoSlow" : {
+               "enabled" : false,
+               "speedPercent" : 0
+            },
             "AutoWall" : {
                "Bones" : [ true, false, false, false, false, false ],
                "Enabled" : false,
@@ -754,6 +839,9 @@
             "ErrorMargin" : {
                "Enabled" : true,
                "Value" : 0.34300002455711365
+            },
+            "FlashCheck" : {
+               "Enabled" : true
             },
             "Friendly" : false,
             "IgnoreJump" : {
@@ -804,6 +892,10 @@
             "AutoShoot" : {
                "Enabled" : false
             },
+            "AutoSlow" : {
+               "enabled" : false,
+               "speedPercent" : 0
+            },
             "AutoWall" : {
                "Bones" : [ true, false, false, false, false, false ],
                "Enabled" : false,
@@ -813,6 +905,9 @@
             "ErrorMargin" : {
                "Enabled" : true,
                "Value" : 0.34300002455711365
+            },
+            "FlashCheck" : {
+               "Enabled" : true
             },
             "Friendly" : false,
             "IgnoreJump" : {
@@ -863,6 +958,10 @@
             "AutoShoot" : {
                "Enabled" : false
             },
+            "AutoSlow" : {
+               "enabled" : false,
+               "speedPercent" : 0
+            },
             "AutoWall" : {
                "Bones" : [ true, false, false, false, false, false ],
                "Enabled" : false,
@@ -872,6 +971,9 @@
             "ErrorMargin" : {
                "Enabled" : true,
                "Value" : 0.34300002455711365
+            },
+            "FlashCheck" : {
+               "Enabled" : true
             },
             "Friendly" : false,
             "IgnoreJump" : {
@@ -922,6 +1024,10 @@
             "AutoShoot" : {
                "Enabled" : false
             },
+            "AutoSlow" : {
+               "enabled" : false,
+               "speedPercent" : 0
+            },
             "AutoWall" : {
                "Bones" : [ true, false, false, false, false, false ],
                "Enabled" : false,
@@ -931,6 +1037,9 @@
             "ErrorMargin" : {
                "Enabled" : false,
                "Value" : 0.34300002455711365
+            },
+            "FlashCheck" : {
+               "Enabled" : true
             },
             "Friendly" : false,
             "IgnoreJump" : {
@@ -981,6 +1090,10 @@
             "AutoShoot" : {
                "Enabled" : false
             },
+            "AutoSlow" : {
+               "enabled" : false,
+               "speedPercent" : 0
+            },
             "AutoWall" : {
                "Bones" : [ true, false, false, false, false, false ],
                "Enabled" : false,
@@ -990,6 +1103,9 @@
             "ErrorMargin" : {
                "Enabled" : false,
                "Value" : 0.34300002455711365
+            },
+            "FlashCheck" : {
+               "Enabled" : true
             },
             "Friendly" : false,
             "IgnoreJump" : {
@@ -1040,6 +1156,10 @@
             "AutoShoot" : {
                "Enabled" : false
             },
+            "AutoSlow" : {
+               "enabled" : false,
+               "speedPercent" : 0
+            },
             "AutoWall" : {
                "Bones" : [ true, false, false, false, false, false ],
                "Enabled" : false,
@@ -1049,6 +1169,9 @@
             "ErrorMargin" : {
                "Enabled" : true,
                "Value" : 0.34300002455711365
+            },
+            "FlashCheck" : {
+               "Enabled" : true
             },
             "Friendly" : false,
             "IgnoreJump" : {
@@ -1116,7 +1239,7 @@
    },
    "Autoblock" : {
       "enabled" : true,
-      "key" : 46
+      "key" : 109
    },
    "BHop" : {
       "enabled" : true
@@ -1489,6 +1612,10 @@
       "enabled" : true,
       "value" : 5
    },
+   "JumpThrow" : {
+      "enabled" : true,
+      "key" : "ALT"
+   },
    "NameStealer" : {
       "enabled" : false,
       "team" : 1
@@ -1609,299 +1736,78 @@
    "ShowSpectators" : {
       "enabled" : true
    },
-   "Skinchanger" : {
-      "Gloves" : {
-         "enabled" : true
+   "SkinChanger" : {
+      "Models" : {
+         "enabled" : false
       },
-      "enabled" : true,
-      "skins" : {
-         "WEAPON_AK47" : {
+      "Skins" : {
+         "enabled" : false,
+         "perTeam" : true
+      },
+      "skinsCT" : {
+         "DEFAULT" : {
             "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_AK47",
-            "PaintKit" : 380,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_AUG" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_AUG",
-            "PaintKit" : 455,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_AWP" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_AWP",
-            "PaintKit" : 446,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_BIZON" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_BIZON",
-            "PaintKit" : 508,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_CZ75A" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_CZ75A",
-            "PaintKit" : 269,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_DEAGLE" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_DEAGLE",
-            "PaintKit" : 469,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_ELITE" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_ELITE",
-            "PaintKit" : 447,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_FAMAS" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_FAMAS",
-            "PaintKit" : 429,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_FIVESEVEN" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_FIVESEVEN",
-            "PaintKit" : 352,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_G3SG1" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_G3SG1",
-            "PaintKit" : 493,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_GALILAR" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_GALILAR",
-            "PaintKit" : 398,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_GLOCK" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_GLOCK",
-            "PaintKit" : 223,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_HKP2000" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_HKP2000",
-            "PaintKit" : 184,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_KNIFE" : {
-            "CustomName" : "黒猫",
-            "ItemDefinitionIndex" : "WEAPON_KNIFE_KARAMBIT",
-            "PaintKit" : 417,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_KNIFE_KARAMBIT" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "",
-            "PaintKit" : -1,
+            "ItemDefinitionIndex" : "DEFAULT",
+            "PaintKit" : 2,
             "Seed" : -1,
             "StatTrak" : -1,
-            "Wear" : -1
+            "Wear" : 0.00050000002374872565
          },
-         "WEAPON_KNIFE_M9_BAYONET" : {
+         "ct_gloves" : {
             "CustomName" : "",
-            "ItemDefinitionIndex" : "",
-            "PaintKit" : -1,
+            "ItemDefinitionIndex" : "specialist_gloves",
+            "PaintKit" : 10006,
             "Seed" : -1,
             "StatTrak" : -1,
-            "Wear" : -1
+            "Wear" : 0.00050000002374872565
          },
-         "WEAPON_KNIFE_T" : {
-            "CustomName" : "五更 瑠璃",
-            "ItemDefinitionIndex" : "WEAPON_KNIFE_M9_BAYONET",
-            "PaintKit" : 98,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_M249" : {
+         "leather_handwraps" : {
             "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_M249",
-            "PaintKit" : 547,
-            "Seed" : 0,
+            "ItemDefinitionIndex" : "DEFAULT",
+            "PaintKit" : 10009,
+            "Seed" : -1,
             "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
+            "Wear" : 0.00050000002374872565
          },
-         "WEAPON_M4A1" : {
+         "motorcycle_gloves" : {
             "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_M4A1",
-            "PaintKit" : 449,
-            "Seed" : 0,
+            "ItemDefinitionIndex" : "DEFAULT",
+            "PaintKit" : 10024,
+            "Seed" : -1,
             "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
+            "Wear" : 0.00050000002374872565
          },
-         "WEAPON_M4A1_SILENCER" : {
+         "slick_gloves" : {
             "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_M4A1_SILENCER",
-            "PaintKit" : 440,
-            "Seed" : 0,
+            "ItemDefinitionIndex" : "DEFAULT",
+            "PaintKit" : 10013,
+            "Seed" : -1,
             "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
+            "Wear" : 0.00050000002374872565
          },
-         "WEAPON_MAC10" : {
+         "specialist_gloves" : {
             "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_MAC10",
-            "PaintKit" : 433,
-            "Seed" : 0,
+            "ItemDefinitionIndex" : "DEFAULT",
+            "PaintKit" : 10033,
+            "Seed" : -1,
             "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
+            "Wear" : 0.00050000002374872565
          },
-         "WEAPON_MAG7" : {
+         "sporty_gloves" : {
             "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_MAG7",
-            "PaintKit" : 535,
-            "Seed" : 0,
+            "ItemDefinitionIndex" : "DEFAULT",
+            "PaintKit" : 10018,
+            "Seed" : -1,
             "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
+            "Wear" : 0.00050000002374872565
          },
-         "WEAPON_MP7" : {
+         "studded_bloodhound_gloves" : {
             "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_MP7",
-            "PaintKit" : 481,
-            "Seed" : 0,
+            "ItemDefinitionIndex" : "DEFAULT",
+            "PaintKit" : 10006,
+            "Seed" : -1,
             "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_MP9" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_MP9",
-            "PaintKit" : 262,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_NOVA" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_NOVA",
-            "PaintKit" : 537,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_P250" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_P250",
-            "PaintKit" : 388,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_P90" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_P90",
-            "PaintKit" : 636,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_REVOLVER" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_REVOLVER",
-            "PaintKit" : 522,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_SAWEDOFF" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_SAWEDOFF",
-            "PaintKit" : 638,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_SG556" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_SG556",
-            "PaintKit" : 487,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_SSG08" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_SSG08",
-            "PaintKit" : 222,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_TASER" : {
-            "CustomName" : "Defibrillator",
-            "ItemDefinitionIndex" : "WEAPON_TASER",
-            "PaintKit" : -1,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_TEC9" : {
-            "CustomName" : "Retard",
-            "ItemDefinitionIndex" : "WEAPON_TEC9",
-            "PaintKit" : 520,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_UMP45" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_UMP45",
-            "PaintKit" : 556,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_USP_SILENCER" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_USP_SILENCER",
-            "PaintKit" : 313,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
-         },
-         "WEAPON_XM1014" : {
-            "CustomName" : "",
-            "ItemDefinitionIndex" : "WEAPON_XM1014",
-            "PaintKit" : 393,
-            "Seed" : 0,
-            "StatTrak" : -1,
-            "Wear" : 0.0050000003539025784
+            "Wear" : 0.00050000002374872565
          },
          "t_gloves" : {
             "CustomName" : "",
@@ -1909,7 +1815,73 @@
             "PaintKit" : 10006,
             "Seed" : -1,
             "StatTrak" : -1,
-            "Wear" : 0.004999999888241291
+            "Wear" : 0.00050000002374872565
+         }
+      },
+      "skinsT" : {
+         "DEFAULT" : {
+            "CustomName" : "",
+            "ItemDefinitionIndex" : "DEFAULT",
+            "PaintKit" : 417,
+            "Seed" : -1,
+            "StatTrak" : -1,
+            "Wear" : 0.00050000002374872565
+         },
+         "leather_handwraps" : {
+            "CustomName" : "",
+            "ItemDefinitionIndex" : "DEFAULT",
+            "PaintKit" : 10009,
+            "Seed" : -1,
+            "StatTrak" : -1,
+            "Wear" : 0.00050000002374872565
+         },
+         "motorcycle_gloves" : {
+            "CustomName" : "",
+            "ItemDefinitionIndex" : "DEFAULT",
+            "PaintKit" : 10024,
+            "Seed" : -1,
+            "StatTrak" : -1,
+            "Wear" : 0.00050000002374872565
+         },
+         "slick_gloves" : {
+            "CustomName" : "",
+            "ItemDefinitionIndex" : "DEFAULT",
+            "PaintKit" : 10013,
+            "Seed" : -1,
+            "StatTrak" : -1,
+            "Wear" : 0.00050000002374872565
+         },
+         "specialist_gloves" : {
+            "CustomName" : "",
+            "ItemDefinitionIndex" : "DEFAULT",
+            "PaintKit" : 10033,
+            "Seed" : -1,
+            "StatTrak" : -1,
+            "Wear" : 0.00050000002374872565
+         },
+         "sporty_gloves" : {
+            "CustomName" : "",
+            "ItemDefinitionIndex" : "DEFAULT",
+            "PaintKit" : 10018,
+            "Seed" : -1,
+            "StatTrak" : -1,
+            "Wear" : 0.00050000002374872565
+         },
+         "studded_bloodhound_gloves" : {
+            "CustomName" : "",
+            "ItemDefinitionIndex" : "DEFAULT",
+            "PaintKit" : 10006,
+            "Seed" : -1,
+            "StatTrak" : -1,
+            "Wear" : 0.00050000002374872565
+         },
+         "t_gloves" : {
+            "CustomName" : "",
+            "ItemDefinitionIndex" : "studded_bloodhound_gloves",
+            "PaintKit" : 10006,
+            "Seed" : -1,
+            "StatTrak" : -1,
+            "Wear" : 0.00050000002374872565
          }
       }
    },
@@ -1918,8 +1890,8 @@
    },
    "Spammer" : {
       "KillSpammer" : {
-         "enabled" : true,
-         "message" : "rip",
+         "enabled" : false,
+         "messages" : null,
          "say_team" : false
       },
       "NormalSpammer" : {
@@ -1939,7 +1911,7 @@
    },
    "Teleport" : {
       "enabled" : false,
-      "key" : 110
+      "key" : 109
    },
    "ThirdPerson" : {
       "distance" : 230,
@@ -1955,6 +1927,7 @@
          "arms" : true,
          "chest" : true,
          "enemies" : true,
+         "flash_check" : true,
          "head" : true,
          "legs" : true,
          "smoke_check" : false,
