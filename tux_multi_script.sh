@@ -9,6 +9,7 @@ function dist_upgrade {
     elif [ -e "/etc/debian_version" ]; then
         sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -fy &&
         sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean
+        sudo dpkg --configure -a
     fi
 }
 function del_steamruntime {
@@ -92,11 +93,11 @@ echo -e "\t2. Установка старой версии AimTux в (/home/at/a
 echo -e "\t3. Установка FACEIT версии AimTux в (/home/at/am_faceit)"
 echo -e "\t4. Удаление всех версий AimTux в (/home/at/*)\n"
 echo -e "\t5. Установка конфигов AimTux"
-echo -e "\t6. Удаление всех конфигов AimTux"
-echo -e "\t7. Полное обновление системы Ubuntu/Debian/Arch\n"
-echo -e "\tp. Install required packages(for the PRIMARY Assembly)"
-echo -e "\tu. Updating your compile Ubuntu\n"
-echo -e "\tt. Install test(am_test) version"
+echo -e "\t6. Удаление всех конфигов AimTux\n"
+echo -e "\t7. Полное обновление системы Ubuntu/Debian/Arch"
+echo -e "\t8. Установить требуемые пакеты для AimTux"
+echo -e "\t9. Обновление компилятора G++ для Ubuntu/Debian на более новый\n"
+echo -e "\tt. Install of the test version AimTux (/home/at/am_test)"
 echo -e "\tf. Fixed dumps Steam folder"
 echo -e "\to. Other tweaks for home"
 echo -e "\tg. Clone my cfg to github"
@@ -174,7 +175,7 @@ while [ $? -ne 1 ]
             dist_upgrade
             echo "Finished upgrade system!"
             ;;
-     p)
+     8)
             if [ -e "/etc/manjaro-release" ]; then
                 sudo pacman -Syu cmake gdb git sdl2 xdotool
             elif [ -e "/etc/arch-release" ]; then
@@ -184,7 +185,7 @@ while [ $? -ne 1 ]
             fi
             echo "Finished pre-install packages!"
             ;;
-     u)
+     9)
             sudo add-apt-repository ppa:ubuntu-toolchain-r/test
             sudo apt-get update
             sudo apt-get install gcc-6 g++-6
@@ -205,6 +206,7 @@ while [ $? -ne 1 ]
             echo "Finished compiling AimTux TEST version!"
             ;;
      f)
+            fix_dumps
             sudo ln -s /dev/null /tmp/dumps
             echo "Finished fixed dumps Steam!"
             ;;
