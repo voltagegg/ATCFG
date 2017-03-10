@@ -8,6 +8,7 @@ function dist_upgrade {
         sudo pacman -Syu
     elif [ -e "/etc/debian_version" ]; then
         sudo apt-get clean
+        #sudo rm -rf /var/lib/apt/lists/*
         sudo apt-get update && sudo apt-get install -fy
         sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean
         sudo dpkg --configure -a
