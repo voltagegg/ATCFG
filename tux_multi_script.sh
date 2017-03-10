@@ -7,8 +7,8 @@ function dist_upgrade {
     elif [ -e "/etc/arch-release" ]; then
         sudo pacman -Syu
     elif [ -e "/etc/debian_version" ]; then
-        sudo apt-get clean
         #sudo rm -rf /var/lib/apt/lists/*
+        sudo apt-get clean
         sudo apt-get update && sudo apt-get install -fy
         sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean
         sudo dpkg --configure -a
@@ -21,6 +21,7 @@ function del_steamruntime {
         rm ~/.steam/ubuntu12_32/steam-runtime/amd64/lib/x86_64-linux-gnu/libgcc_s.so.*
         rm ~/.steam/ubuntu12_32/steam-runtime/amd64/usr/lib/x86_64-linux-gnu/libstdc++.so.*
         rm ~/.steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libxcb.so.*
+        rm ~/.steam/ubuntu12_32/steam-runtime/i386/lib/i386-linux-gnu/libgpg-error.so.*
     fi
 }
 ###STEAM FIX###
