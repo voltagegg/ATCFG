@@ -7,7 +7,6 @@ function dist_upgrade {
     elif [ -e "/etc/arch-release" ]; then
         sudo pacman -Syu
     elif [ -e "/etc/debian_version" ]; then
-        sudo apt-get clean
         sudo apt-get update && sudo apt-get -fy install
         sudo apt-get -y dist-upgrade && sudo apt-get -y autoremove && sudo apt-get autoclean
         sudo dpkg --configure -a
