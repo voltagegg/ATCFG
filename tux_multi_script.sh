@@ -3,10 +3,8 @@
 ###UPGRADE DIST & DEL STEAM-RUNTIME###
 function dist_upgrade {
     if [ -e "/etc/manjaro-release" ]; then
-        sudo pacman -Sc
         sudo yaourt -Syua
     elif [ -e "/etc/arch-release" ]; then
-        sudo pacman -Sc
         sudo pacman -Syu
     elif [ -e "/etc/debian_version" ]; then
         sudo apt-get clean
@@ -17,11 +15,11 @@ function dist_upgrade {
 }
 function dist_upgrade_adv {
     if [ -e "/etc/manjaro-release" ]; then
-        sudo pacman -Scc
-        sudo yaourt -Syua
+        sudo pacman -Sc
+        sudo pacman -Syyu
     elif [ -e "/etc/arch-release" ]; then
-        sudo pacman -Scc
-        sudo pacman -Syu
+        sudo pacman -Sc
+        sudo pacman -Syyu
     elif [ -e "/etc/debian_version" ]; then
         sudo rm -rf /var/lib/apt/lists/*
         sudo apt-get clean
