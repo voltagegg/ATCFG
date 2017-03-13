@@ -28,6 +28,18 @@ function dist_upgrade_adv {
         dpkg -l | awk '/^rc/ {print $2}' | xargs sudo dpkg --purge
    fi
 }
+function kernel_upg {
+    if [ -e "/etc/manjaro-release" ]; then
+        sudo pacman -Sc
+        sudo pacman -Syyu
+    elif [ -e "/etc/arch-release" ]; then
+        sudo pacman -Sc
+        sudo pacman -Syyu
+    elif [ -e "/etc/debian_version" ]; then
+        sudo update-initramfs -c -k all
+        sudo update-grub
+   fi
+}
 function del_steamruntime {
     if [ -e "/etc/debian_version" ]; then
         rm ~/.steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/libstdc++.so.*
@@ -114,7 +126,8 @@ echo -e "\t6. Удаление всех конфигов AimTux\n"
 echo -e "\t7. Полное обновление системы Ubuntu/Debian/Arch"
 echo -e "\t8. Установить требуемые пакеты для AimTux"
 echo -e "\t9. Обновление компилятора G++ для Ubuntu/Debian на более новый"
-echo -e "\tu. Очистка кэша обновлений и старой конфигурации системы\n"
+echo -e "\tu. Очистка кэша обновлений и старой конфигурации системы"
+echo -e "\tu. Обновление модулей ядра и загрузчика системы\n"
 echo -e "\tt. Install of the test version AimTux (/home/at/am_test)"
 echo -e "\tf. Fixed dumps Steam folder"
 echo -e "\tg. Clone my cfg to github"
