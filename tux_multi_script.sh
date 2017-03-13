@@ -59,7 +59,7 @@ function del_steam {
         sudo pacman -R steam steam-native-runtime
     elif [ -e "/etc/debian_version" ]; then
         sudo apt-get purge steam:i386
-    fiu
+    fi
 }
 ###AIMTUX FIX###
 function fix_at {
