@@ -108,11 +108,10 @@ echo -e "\t5. Установка конфигов AimTux"
 echo -e "\t6. Удаление всех конфигов AimTux\n"
 echo -e "\t7. Полное обновление системы Ubuntu/Debian/Arch"
 echo -e "\t8. Установить требуемые пакеты для AimTux"
-echo -e "\t9. Обновление компилятора G++ для Ubuntu/Debian на более новый\n"
-echo -e "\tu. Advanced upgrade system Debian/Ubuntu-based"
+echo -e "\t9. Обновление компилятора G++ для Ubuntu/Debian на более новый"
+echo -e "\tu. Очистка кэша обновлений и старой конфигурации Ubuntu/Debian\n"
 echo -e "\tt. Install of the test version AimTux (/home/at/am_test)"
 echo -e "\tf. Fixed dumps Steam folder"
-echo -e "\to. Other tweaks for home"
 echo -e "\tg. Clone my cfg to github"
 echo -e "\tD. Deletion Steam\n"
 echo -e "\tq. Выход\n"
@@ -207,7 +206,6 @@ while [ $? -ne 1 ]
      u)
             dist_upgrade_adv
             ;;
-
      t)
             echo "Compiling AimTux TEST version..."
             fix_at
@@ -226,11 +224,6 @@ while [ $? -ne 1 ]
             fix_dumps
             sudo ln -s /dev/null /tmp/dumps
             echo "Finished fixed dumps Steam!"
-            ;;
-     o)
-            [ ! -d /home/SOFT ] && sudo mkdir /home/SOFT
-            sudo chmod -R 777 /home/SOFT
-            echo "Finished other tweaks!"
             ;;
      g)
             fix_atcfg
