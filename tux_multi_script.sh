@@ -7,12 +7,21 @@ function dist_upgrade {
     elif [ -e "/etc/arch-release" ]; then
         sudo pacman -Syu
     elif [ -e "/etc/debian_version" ]; then
-        #sudo rm -rf /var/lib/apt/lists/*
         sudo apt-get clean
-        sudo apt-get update && sudo apt-get install -fy
-        sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean
+        sudo apt-get update && sudo apt-get -fy install
+        sudo apt-get -y dist-upgrade && sudo apt-get -y autoremove && sudo apt-get autoclean
         sudo dpkg --configure -a
     fi
+}
+function dist_upgrade_adv {
+    if [ -e "/etc/debian_version" ]; then
+        sudo rm -rf /var/lib/apt/lists/*
+        sudo apt-get clean
+        sudo apt-get update && sudo apt-get -fy install
+        sudo apt-get -y dist-upgrade && sudo apt-get -y autoremove && sudo apt-get autoclean
+        sudo dpkg --configure -a
+        dpkg -l | awk '/^rc/ {print $2}' | xargs sudo dpkg --purge
+   fi
 }
 function del_steamruntime {
     if [ -e "/etc/debian_version" ]; then
@@ -100,6 +109,7 @@ echo -e "\t6. Удаление всех конфигов AimTux\n"
 echo -e "\t7. Полное обновление системы Ubuntu/Debian/Arch"
 echo -e "\t8. Установить требуемые пакеты для AimTux"
 echo -e "\t9. Обновление компилятора G++ для Ubuntu/Debian на более новый\n"
+echo -e "\tu. Advanced upgrade system Debian/Ubuntu-based"
 echo -e "\tt. Install of the test version AimTux (/home/at/am_test)"
 echo -e "\tf. Fixed dumps Steam folder"
 echo -e "\to. Other tweaks for home"
@@ -194,6 +204,10 @@ while [ $? -ne 1 ]
             sudo apt-get install gcc-6 g++-6
             sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
             ;;
+     u)
+            dist_upgrade_adv
+            ;;
+
      t)
             echo "Compiling AimTux TEST version..."
             fix_at
