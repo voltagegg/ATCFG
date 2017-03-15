@@ -127,7 +127,7 @@ echo -e "\t7. Полное обновление системы Ubuntu/Debian/Arc
 echo -e "\t8. Установить требуемые пакеты для AimTux"
 echo -e "\t9. Обновление компилятора G++ для Ubuntu/Debian на более новый"
 echo -e "\tu. Очистка кэша обновлений и старой конфигурации системы"
-echo -e "\tu. Обновление модулей ядра и загрузчика системы\n"
+echo -e "\tk. Обновление модулей ядра и загрузчика системы\n"
 echo -e "\tt. Install of the test version AimTux (/home/at/am_test)"
 echo -e "\tf. Fixed dumps Steam folder"
 echo -e "\tg. Clone my cfg to github"
@@ -223,6 +223,9 @@ while [ $? -ne 1 ]
             ;;
      u)
             dist_upgrade_adv
+            ;;
+     k)
+            kernel_upg
             ;;
      t)
             echo "Compiling AimTux TEST version..."
