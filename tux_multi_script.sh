@@ -30,15 +30,13 @@ function dist_upgrade_adv {
 }
 function kernel_upg {
     if [ -e "/etc/manjaro-release" ]; then
-        sudo pacman -Sc
-        sudo pacman -Syyu
+        sudo mkinitcpio -P
     elif [ -e "/etc/arch-release" ]; then
-        sudo pacman -Sc
-        sudo pacman -Syyu
+        sudo mkinitcpio -P
     elif [ -e "/etc/debian_version" ]; then
-        sudo update-initramfs -c -k all
-        sudo update-grub
+        sudo update-initramfs -c -k all      
    fi
+        sudo update-grub
 }
 function del_steamruntime {
     if [ -e "/etc/debian_version" ]; then
