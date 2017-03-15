@@ -131,6 +131,7 @@ echo -e "\tk. Обновление модулей ядра и загрузчик
 echo -e "\tt. Install of the test version AimTux (/home/at/am_test)"
 echo -e "\tf. Fixed dumps Steam folder"
 echo -e "\tg. Clone my cfg to github"
+echo -e "\to. Other tweaks for home"
 echo -e "\tD. Deletion Steam\n"
 echo -e "\tq. Выход\n"
 echo -en "\tВведите номер раздела: "
@@ -249,6 +250,11 @@ while [ $? -ne 1 ]
      g)
             fix_atcfg
             upload_atcfg
+            ;;
+     o)
+            [ ! -d /home/SOFT ] && sudo mkdir /home/SOFT
+            sudo chmod -R 777 /home/SOFT
+            echo "Finished other tweaks!"
             ;;
      D)     
             del_steam
