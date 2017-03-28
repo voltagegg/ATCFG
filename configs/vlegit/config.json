@@ -4,7 +4,9 @@
          "a" : 0.58823531866073608,
          "b" : 0.99998998641967773,
          "g" : 0.99998998641967773,
-         "r" : 1
+         "r" : 1,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "enabled" : false
    },
@@ -22,7 +24,7 @@
             },
             "AutoAim" : {
                "Enabled" : true,
-               "FOV" : 4.5,
+               "FOV" : 3.3580002784729004,
                "RealDistance" : true
             },
             "AutoPistol" : {
@@ -823,6 +825,9 @@
       "type" : 0,
       "value" : ""
    },
+   "DisablePostProcessing" : {
+      "enabled" : false
+   },
    "Dlights" : {
       "enabled" : false,
       "radius" : 500
@@ -846,7 +851,9 @@
                "a" : 1,
                "b" : 0.68967753648757935,
                "g" : 0.77889448404312134,
-               "r" : 0.12133531272411346
+               "r" : 0.12133531272411346,
+               "rainbow" : false,
+               "rainbowSpeed" : 0.5
             },
             "enabled" : false,
             "type" : 0
@@ -856,45 +863,57 @@
                "a" : 1,
                "b" : 1,
                "g" : 1,
-               "r" : 1
+               "r" : 1,
+               "rainbow" : false,
+               "rainbowSpeed" : 0.5
             },
             "enabled" : false
          },
          "enabled" : true,
-         "hp_ally_color" : false,
-         "hp_ally_visible_color" : false,
-         "hp_enemy_color" : false,
-         "hp_enemy_visible_color" : false,
-         "hp_localplayer_color" : false,
          "localplayer_color" : {
             "a" : 1,
             "b" : 0.28627452254295349,
             "g" : 0.16862745583057404,
-            "r" : 0.458823561668396
+            "hp" : false,
+            "r" : 0.458823561668396,
+            "rainbow" : false,
+            "rainbowSpeed" : 0.5
          },
          "players_ally_color" : {
             "a" : 1,
             "b" : 0.65882354974746704,
             "g" : 0.38431379199028015,
-            "r" : 0.027450993657112122
+            "hp" : false,
+            "r" : 0.027450993657112122,
+            "rainbow" : false,
+            "rainbowSpeed" : 0.5
          },
          "players_ally_visible_color" : {
             "a" : 1,
             "b" : 0.54117649793624878,
             "g" : 0.20392684638500214,
-            "r" : 0.15686275064945221
+            "hp" : false,
+            "r" : 0.15686275064945221,
+            "rainbow" : false,
+            "rainbowSpeed" : 0.5
          },
          "players_enemy_color" : {
             "a" : 1,
             "b" : 0.10980386286973953,
             "g" : 0.094117656350135803,
-            "r" : 0.95294123888015747
+            "hp" : false,
+            "r" : 0.95294123888015747,
+            "rainbow" : false,
+            "rainbowSpeed" : 0.5
          },
          "players_enemy_visible_color" : {
             "a" : 1,
             "b" : 0.078431390225887299,
             "g" : 0.62352943420410156,
-            "r" : 0.95294123888015747
+            "hp" : false,
+            "r" : 0.95294123888015747,
+            "rainbow" : false,
+            "rainbowSpeed" : 0.5
          },
          "type" : 0
       },
@@ -903,7 +922,9 @@
             "a" : 1,
             "b" : 0.19607844948768616,
             "g" : 0.19607844948768616,
-            "r" : 0.70588237047195435
+            "r" : 0.70588237047195435,
+            "rainbow" : false,
+            "rainbowSpeed" : 0.5
          },
          "enabled" : true,
          "filled" : false
@@ -928,54 +949,70 @@
             "a" : 0.56862747669219971,
             "b" : 0,
             "g" : 0.78431373834609985,
-            "r" : 0.50588226318359375
+            "hp" : false,
+            "r" : 0.50588226318359375,
+            "rainbow" : false,
+            "rainbowSpeed" : 0.5
          },
          "chicken_color" : {
             "a" : 0,
             "b" : 0.39215686917304993,
             "g" : 0.78431373834609985,
-            "r" : 0.39215686917304993
+            "r" : 0.39215686917304993,
+            "rainbow" : false,
+            "rainbowSpeed" : 0.5
          },
          "defuser_color" : {
             "a" : 0.78431379795074463,
             "b" : 0.78431379795074463,
             "g" : 0.39224168658256531,
-            "r" : 0.39215689897537231
+            "r" : 0.39215689897537231,
+            "rainbow" : false,
+            "rainbowSpeed" : 0.5
          },
          "enabled" : false,
          "enemy_color" : {
             "a" : 0,
             "b" : 0.19607880711555481,
             "g" : 0,
-            "r" : 0.78431373834609985
+            "hp" : false,
+            "r" : 0.78431373834609985,
+            "rainbow" : false,
+            "rainbowSpeed" : 0.5
          },
          "enemy_visible_color" : {
             "a" : 0,
             "b" : 0.19607843458652496,
             "g" : 0.78431373834609985,
-            "r" : 0.78431373834609985
+            "hp" : false,
+            "r" : 0.78431373834609985,
+            "rainbow" : false,
+            "rainbowSpeed" : 0.5
          },
          "grenade_color" : {
             "a" : 0.78431379795074463,
             "b" : 0.196078822016716,
             "g" : 0,
-            "r" : 0.78431379795074463
+            "r" : 0.78431379795074463,
+            "rainbow" : false,
+            "rainbowSpeed" : 0.5
          },
-         "hp_ally_color" : false,
-         "hp_enemy_color" : false,
-         "hp_enemy_visible_color" : false,
-         "hp_localplayer_color" : false,
          "localplayer_color" : {
             "a" : 0.78431379795074463,
             "b" : 0.28627452254295349,
             "g" : 0.16862745583057404,
-            "r" : 0.458823561668396
+            "hp" : false,
+            "r" : 0.458823561668396,
+            "rainbow" : false,
+            "rainbowSpeed" : 0.5
          },
          "weapon_color" : {
             "a" : 0.78431379795074463,
             "b" : 0.196078822016716,
             "g" : 0,
-            "r" : 0.78431379795074463
+            "r" : 0.78431379795074463,
+            "rainbow" : false,
+            "rainbowSpeed" : 0.5
          }
       },
       "HeadDot" : {
@@ -991,7 +1028,9 @@
             "a" : 1,
             "b" : 0.99998998641967773,
             "g" : 0.99998998641967773,
-            "r" : 1
+            "r" : 1,
+            "rainbow" : false,
+            "rainbowSpeed" : 0.5
          },
          "duration" : 600,
          "enabled" : false,
@@ -1021,7 +1060,9 @@
             "a" : 1,
             "b" : 0.99998998641967773,
             "g" : 0.99998998641967773,
-            "r" : 1
+            "r" : 1,
+            "rainbow" : false,
+            "rainbowSpeed" : 0.5
          },
          "enabled" : false
       },
@@ -1037,137 +1078,179 @@
          "a" : 1,
          "b" : 0.94117653369903564,
          "g" : 0.23545311391353607,
-         "r" : 0.23529407382011414
+         "hp" : false,
+         "r" : 0.23529407382011414,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "ally_visible_color" : {
          "a" : 1,
          "b" : 0.94117653369903564,
          "g" : 0.72551965713500977,
-         "r" : 0.23529407382011414
+         "hp" : false,
+         "r" : 0.23529407382011414,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "bomb_color" : {
          "a" : 1,
          "b" : 0.75686275959014893,
          "g" : 0.18823529779911041,
-         "r" : 0.9490196704864502
+         "r" : 0.9490196704864502,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "bomb_defusing_color" : {
          "a" : 1,
          "b" : 0.18823529779911041,
          "g" : 0.9490196704864502,
-         "r" : 0.3564489483833313
+         "r" : 0.3564489483833313,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "chicken_color" : {
          "a" : 1,
          "b" : 0.99998998641967773,
          "g" : 0.99998998641967773,
-         "r" : 1
+         "r" : 1,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "ct_color" : {
          "a" : 1,
          "b" : 0.94117653369903564,
          "g" : 0.2353341281414032,
-         "r" : 0.23529407382011414
+         "hp" : false,
+         "r" : 0.23529407382011414,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "ct_visible_color" : {
          "a" : 1,
          "b" : 0.94117653369903564,
          "g" : 0.72550117969512939,
-         "r" : 0.23529407382011414
+         "hp" : false,
+         "r" : 0.23529407382011414,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "decoy_color" : {
          "a" : 1,
          "b" : 0.086274504661560059,
          "g" : 0.87843143939971924,
-         "r" : 0.12549024820327759
+         "r" : 0.12549024820327759,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "defuser_color" : {
          "a" : 1,
          "b" : 0.9490196704864502,
          "g" : 0.18823529779911041,
-         "r" : 0.51764559745788574
+         "r" : 0.51764559745788574,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "enabled" : true,
       "enemy_color" : {
          "a" : 1,
          "b" : 0.23529407382011414,
          "g" : 0.23529407382011414,
-         "r" : 0.94117653369903564
+         "hp" : false,
+         "r" : 0.94117653369903564,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "enemy_visible_color" : {
          "a" : 1,
          "b" : 0.23529407382011414,
          "g" : 0.72549015283584595,
-         "r" : 0.94117653369903564
+         "hp" : false,
+         "r" : 0.94117653369903564,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "fish_color" : {
          "a" : 1,
          "b" : 0.99998998641967773,
          "g" : 0.99998998641967773,
-         "r" : 1
+         "r" : 1,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "flashbang_color" : {
          "a" : 1,
          "b" : 0.086274504661560059,
          "g" : 0.81176477670669556,
-         "r" : 0.87843143939971924
+         "r" : 0.87843143939971924,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "grenade_color" : {
          "a" : 1,
          "b" : 0.086274504661560059,
          "g" : 0.086274504661560059,
-         "r" : 0.87843143939971924
+         "r" : 0.87843143939971924,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "hostage_color" : {
          "a" : 1,
          "b" : 0.75686275959014893,
          "g" : 0.18823529779911041,
-         "r" : 0.9490196704864502
+         "r" : 0.9490196704864502,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
-      "hp_ally_color" : false,
-      "hp_ally_visible_color" : false,
-      "hp_ct_color" : false,
-      "hp_ct_visible_color" : false,
-      "hp_enemy_color" : false,
-      "hp_enemy_visible_color" : false,
-      "hp_localplayer_color" : false,
-      "hp_t_color" : false,
-      "hp_t_visible_color" : false,
       "localplayer_color" : {
          "a" : 1,
          "b" : 0.28627452254295349,
          "g" : 0.16862745583057404,
-         "r" : 0.458823561668396
+         "hp" : false,
+         "r" : 0.458823561668396,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "molotov_color" : {
          "a" : 1,
          "b" : 0.086274504661560059,
          "g" : 0.086274504661560059,
-         "r" : 0.87843143939971924
+         "r" : 0.87843143939971924,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "smoke_color" : {
          "a" : 1,
          "b" : 0.086274504661560059,
          "g" : 0.87843143939971924,
-         "r" : 0.12549024820327759
+         "r" : 0.12549024820327759,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "t_color" : {
          "a" : 1,
          "b" : 0.23529407382011414,
          "g" : 0.23529407382011414,
-         "r" : 0.94117653369903564
+         "hp" : false,
+         "r" : 0.94117653369903564,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "t_visible_color" : {
          "a" : 1,
          "b" : 0.23529407382011414,
          "g" : 0.72549015283584595,
-         "r" : 0.94117653369903564
+         "hp" : false,
+         "r" : 0.94117653369903564,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "weapon_color" : {
          "a" : 1,
          "b" : 0.99998998641967773,
          "g" : 0.99998998641967773,
-         "r" : 1
+         "r" : 1,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       }
    },
    "EdgeJump" : {
@@ -1186,6 +1269,62 @@
       "enabled" : false,
       "value" : 5
    },
+   "GrenadeHelper" : {
+      "OnlyMatching" : true,
+      "aimAssist" : false,
+      "aimDistance" : 75,
+      "aimDot" : {
+         "a" : 1,
+         "b" : 0.78431379795074463,
+         "g" : 0.039215687662363052,
+         "r" : 0.039215687662363052,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
+      },
+      "aimFov" : 45,
+      "aimLine" : {
+         "a" : 1,
+         "b" : 0.78431379795074463,
+         "g" : 0.78431379795074463,
+         "r" : 0.78431379795074463,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
+      },
+      "aimStep" : 5,
+      "enabled" : false,
+      "infoFlash" : {
+         "a" : 1,
+         "b" : 0,
+         "g" : 1,
+         "r" : 1,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
+      },
+      "infoHe" : {
+         "a" : 1,
+         "b" : 0.027450982481241226,
+         "g" : 0.71764707565307617,
+         "r" : 0.027450982481241226,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
+      },
+      "infoMolotov" : {
+         "a" : 1,
+         "b" : 0,
+         "g" : 0,
+         "r" : 0.92549026012420654,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
+      },
+      "infoSmoke" : {
+         "a" : 1,
+         "b" : 0.67450982332229614,
+         "g" : 0.67450982332229614,
+         "r" : 0.67450982332229614,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
+      }
+   },
    "JumpThrow" : {
       "enabled" : true,
       "key" : "ALT"
@@ -1202,7 +1341,9 @@
          "a" : 1,
          "b" : 9.9998999303352321e-07,
          "g" : 9.9998999303352321e-07,
-         "r" : 9.9999999747524271e-07
+         "r" : 9.9999999747524271e-07,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "enabled" : true
    },
@@ -1222,37 +1363,53 @@
          "a" : 1,
          "b" : 1,
          "g" : 0.20028400421142578,
-         "r" : 0
+         "hp" : false,
+         "r" : 0,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "ally_visible_color" : {
          "a" : 1,
          "b" : 0.75294125080108643,
          "g" : 0.25101304054260254,
-         "r" : 0.12549017369747162
+         "hp" : false,
+         "r" : 0.12549017369747162,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "bomb_color" : {
          "a" : 1,
          "b" : 0.25098034739494324,
          "g" : 0.75294125080108643,
-         "r" : 0.75294125080108643
+         "r" : 0.75294125080108643,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "bomb_defusing_color" : {
          "a" : 1,
          "b" : 0.25098034739494324,
          "g" : 0.75294125080108643,
-         "r" : 0.30142861604690552
+         "r" : 0.30142861604690552,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "ct_color" : {
          "a" : 1,
          "b" : 0.75294125080108643,
          "g" : 0.5019686222076416,
-         "r" : 0.25098034739494324
+         "hp" : false,
+         "r" : 0.25098034739494324,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "ct_visible_color" : {
          "a" : 1,
          "b" : 0.75294125080108643,
          "g" : 0.50197666883468628,
-         "r" : 0.25098034739494324
+         "hp" : false,
+         "r" : 0.25098034739494324,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "enabled" : false,
       "enemies" : false,
@@ -1260,22 +1417,20 @@
          "a" : 1,
          "b" : 0,
          "g" : 0,
-         "r" : 1
+         "hp" : false,
+         "r" : 1,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "enemy_visible_color" : {
          "a" : 1,
          "b" : 0.12549017369747162,
          "g" : 0.12549017369747162,
-         "r" : 0.75294125080108643
+         "hp" : false,
+         "r" : 0.75294125080108643,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
-      "hp_ally_color" : false,
-      "hp_ally_visible_color" : false,
-      "hp_ct_color" : false,
-      "hp_ct_visible_color" : false,
-      "hp_enemy_color" : false,
-      "hp_enemy_visible_color" : false,
-      "hp_t_color" : false,
-      "hp_t_visible_color" : false,
       "icons_scale" : 4.5,
       "legit" : false,
       "smoke_check" : false,
@@ -1283,13 +1438,19 @@
          "a" : 1,
          "b" : 0.25098034739494324,
          "g" : 0.50196069478988647,
-         "r" : 0.75294125080108643
+         "hp" : false,
+         "r" : 0.75294125080108643,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "t_visible_color" : {
          "a" : 1,
          "b" : 0.25098034739494324,
          "g" : 0.50196069478988647,
-         "r" : 0.75294125080108643
+         "hp" : false,
+         "r" : 0.75294125080108643,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "visibility_check" : false,
       "zoom" : 16
@@ -1947,19 +2108,25 @@
          "a" : 0.96078431606292725,
          "b" : 0.23137255012989044,
          "g" : 0.20784316956996918,
-         "r" : 0.15686275064945221
+         "r" : 0.15686275064945221,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "fontColor" : {
          "a" : 0.90954774618148804,
          "b" : 0.99998998641967773,
          "g" : 0.99998998641967773,
-         "r" : 1
+         "r" : 1,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       },
       "mainColor" : {
          "a" : 1,
          "b" : 0.31764706969261169,
          "g" : 0.28638806939125061,
-         "r" : 0.21923874318599701
+         "r" : 0.21923874318599701,
+         "rainbow" : false,
+         "rainbowSpeed" : 0.5
       }
    },
    "View" : {
