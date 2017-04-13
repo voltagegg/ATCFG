@@ -214,7 +214,9 @@ while [ $? -ne 1 ]
             fi
             echo "Finished pre-install packages!"
             ;;
-     9)
+     9)     
+            sudo apt-get update
+            sudo apt-get install gcc build-essential -y
             sudo add-apt-repository ppa:ubuntu-toolchain-r/test
             sudo apt-get update
             sudo apt-get install gcc-6 g++-6
