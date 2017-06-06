@@ -7,8 +7,8 @@ function dist_upgrade {
     elif [ -e "/etc/arch-release" ]; then
         sudo pacman -Syu
     elif [ -e "/etc/debian_version" ]; then
-        sudo apt-get update && sudo apt-get -fy install
-        sudo apt-get -y dist-upgrade && sudo apt-get -y autoremove && sudo apt-get autoclean
+        sudo apt-get -fy install
+        sudo -- sh -c 'apt-get clean; apt-get update; apt-get upgrade -y; apt-get dist-upgrade -y; apt-get autoremove -y; apt-get autoclean -y'
         sudo dpkg --configure -a
     fi
 }
@@ -21,9 +21,7 @@ function dist_upgrade_adv {
         sudo pacman -Syyu
     elif [ -e "/etc/debian_version" ]; then
         sudo rm -rf /var/lib/apt/lists/*
-        sudo apt-get clean
-        sudo apt-get update && sudo apt-get -fy install
-        sudo apt-get -y dist-upgrade && sudo apt-get -y autoremove && sudo apt-get autoclean
+        sudo -- sh -c 'apt-get clean; apt-get update; apt-get upgrade -y; apt-get dist-upgrade -y; apt-get autoremove -y; apt-get autoclean -y'
         sudo dpkg --configure -a
         dpkg -l | awk '/^rc/ {print $2}' | xargs sudo dpkg --purge
    fi
