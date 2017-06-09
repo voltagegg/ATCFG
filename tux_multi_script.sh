@@ -75,23 +75,18 @@ function fix_at {
     [ -f /tmp/master* ] && sudo rm -f /tmp/master*
     [ -f /tmp/v1.0* ] && sudo rm -f /tmp/v1.0*
     [ -f /tmp/faceit* ] && sudo rm -f /tmp/faceit*
-    [ -f /tmp/gloves* ] && sudo rm -f /tmp/gloves*
     [ -f /tmp/Fuzion* ] && sudo rm -f /tmp/Fuzion*
 }
 function fix_atcfg {
     [ ! -d /home/$USER/.config/AimTux ] && sudo mkdir /home/$USER/.config/AimTux
     [ ! -d /home/$USER/.config/AimTuxGH ] && sudo mkdir /home/$USER/.config/AimTuxGH
-    sudo chown -R $USER:$USER /home/$USER/.config/AimTux
-    sudo chown -R $USER:$USER /home/$USER/.config/AimTuxGH
-    sudo chmod -R 700 /home/$USER/.config/AimTux
-    sudo chmod -R 700 /home/$USER/.config/AimTuxGH
+    sudo chown -R $USER:$USER /home/$USER/.config/AimTux*
+    sudo chmod -R 700 /home/$USER/.config/AimTux*
     #FUZION
     [ ! -d /home/$USER/.config/Fuzion ] && sudo mkdir /home/$USER/.config/Fuzion
     [ ! -d /home/$USER/.config/FuzionGH ] && sudo mkdir /home/$USER/.config/FuzionGH
-    sudo chown -R $USER:$USER /home/$USER/.config/Fuzion    
-    sudo chown -R $USER:$USER /home/$USER/.config/FuzionGH
-    sudo chmod -R 700 /home/$USER/.config/Fuzion
-    sudo chmod -R 700 /home/$USER/.config/FuzionGH
+    sudo chown -R $USER:$USER /home/$USER/.config/Fuzion*    
+    sudo chmod -R 700 /home/$USER/.config/Fuzion*
 }
 ###CONFIGS###
 function download_atcfg {
@@ -123,7 +118,6 @@ fix_atcfg
 ###MENU###
 function menu {
 clear
-echo
 echo -e "\t\t\tМеню скрипта\n"
 echo -e "\t1. Установка новой версии AimTux в (/home/at/am_new)"
 echo -e "\t2. Установка старой версии AimTux в (/home/at/am_stable)"
@@ -156,7 +150,7 @@ while [ $? -ne 1 ]
      1)
             echo "Compiling AimTux new version..."
             fix_at
-            #download_atcfg
+            download_atcfg
             [ -d /home/at/am_new ] && sudo rm -rf /home/at/am_new            
             git clone --recursive https://github.com/AimTuxOfficial/AimTux
             mv /tmp/AimTux /home/at/am_new
@@ -170,7 +164,7 @@ while [ $? -ne 1 ]
      2)
             echo "Compiling AimTux stable version..."
             fix_at
-            #download_atcfg
+            download_atcfg
             [ -d /home/at/am_stable ] && sudo rm -rf /home/at/am_stable
             wget https://github.com/AimTuxOfficial/AimTux/archive/v1.0.zip && unzip v1.0.zip
             mv /tmp/AimTux-1.0 /home/at/am_stable
@@ -184,7 +178,7 @@ while [ $? -ne 1 ]
      3)
             echo "Compiling AimTux FACEIT version..."
             fix_at
-            #download_atcfg
+            download_atcfg
             [ -d /home/at/am_faceit ] && sudo rm -rf /home/at/am_faceit
             git clone --recursive -b faceit https://github.com/AimTuxOfficial/AimTux
             mv /tmp/AimTux /home/at/am_faceit
@@ -214,12 +208,14 @@ while [ $? -ne 1 ]
             echo "Install Configs..."
             download_atcfg
             sudo cp -ar /tmp/ATCFG/configs/* /home/$USER/.config/AimTux/
-            sudo cp -ar /tmp/ATCFG/McSwaggens_configs/configs/* /home/$USER/.config/AimTux/
-            sudo cp -ar /tmp/ATCFG/kvdrrrrr_configs/* /home/$USER/.config/AimTux/
+            #other configs
+            #sudo cp -ar /tmp/ATCFG/McSwaggens_configs/configs/* /home/$USER/.config/AimTux/
+            #sudo cp -ar /tmp/ATCFG/kvdrrrrr_configs/* /home/$USER/.config/AimTux/
             echo "Finished install configs!"
             ;;
      7)
-            sudo rm -rf /home/$USER/.config/AimTux/*
+            sudo rm -rf /home/$USER/.config/AimTux*
+            sudo rm -rf /home/$USER/.config/Fuzion*
             echo "Finished deletion configs!"
             ;;
      8)
