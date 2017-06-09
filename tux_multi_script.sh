@@ -131,11 +131,10 @@ echo -e "\t9. Установить требуемые пакеты для AimTux
 echo -e "\t0. Обновление компилятора G++ для Ubuntu/Debian на более новый"
 echo -e "\tu. Очистка кэша обновлений и старой конфигурации системы"
 echo -e "\tk. Обновление модулей ядра и загрузчика системы\n"
-echo -e "\tt. Install of the test version AimTux (/home/at/am_test)"
 echo -e "\tf. Fixed dumps Steam folder"
 echo -e "\tg. Clone my cfg to github"
 echo -e "\to. Other tweaks for home"
-echo -e "\tD. Deletion Steam\n"
+echo -e "\tD. Deletion Steam"
 echo -e "\tq. Выход\n"
 echo -en "\tВведите номер раздела: "
 read option
@@ -245,20 +244,6 @@ while [ $? -ne 1 ]
             ;;
      k)
             kernel_upg
-            ;;
-     t)
-            echo "Compiling AimTux TEST version..."
-            fix_at
-            download_atcfg
-            [ -d /home/at/am_test ] && sudo rm -rf /home/at/am_test
-            git clone --recursive -b gloves https://github.com/AimTuxOfficial/AimTux
-            mv /tmp/AimTux /home/at/am_test
-            cd /home/at/am_test
-            cmake .
-            make -j 4
-            sudo cp -a /tmp/ATCFG/launcher /home/at/am_test/
-            sudo chmod 700 launcher
-            echo "Finished compiling AimTux TEST version!"
             ;;
      f)
             fix_dumps
