@@ -48,9 +48,9 @@ function del_steamruntime {
 }
 ###STEAM FIX###
 function fix_dumps {
-    [ ! -d /tmp/dumps ] && sudo mkdir /tmp/dumps
-    sudo rm -rf /tmp/dumps/*
-    sudo chmod 600 /tmp/dumps
+    sudo rm -rf /tmp/dumps
+    sudo mkdir /tmp/dumps
+    sudo chmod 000 /tmp/dumps
 }
 function fix_library {
     [ ! -d /home/SteamLibrary ] && sudo mkdir /home/SteamLibrary
@@ -75,6 +75,7 @@ function fix_at {
     [ -f /tmp/v1.0* ] && sudo rm -f /tmp/v1.0*
     [ -f /tmp/faceit* ] && sudo rm -f /tmp/faceit*
     [ -f /tmp/gloves* ] && sudo rm -f /tmp/gloves*
+    [ -f /tmp/Fuison* ] && sudo rm -f /tmp/Fuzion*
 }
 function fix_atcfg {
     [ ! -d /home/$USER/.config/AimTux ] && sudo mkdir /home/$USER/.config/AimTux
@@ -116,12 +117,13 @@ echo -e "\t\t\tМеню скрипта\n"
 echo -e "\t1. Установка новой версии AimTux в (/home/at/am_new)"
 echo -e "\t2. Установка старой версии AimTux в (/home/at/am_stable)"
 echo -e "\t3. Установка FACEIT версии AimTux в (/home/at/am_faceit)"
-echo -e "\t4. Удаление всех версий AimTux в (/home/at/*)\n"
-echo -e "\t5. Установка конфигов AimTux"
-echo -e "\t6. Удаление всех конфигов AimTux\n"
-echo -e "\t7. Полное обновление системы Ubuntu/Debian/Arch"
-echo -e "\t8. Установить требуемые пакеты для AimTux"
-echo -e "\t9. Обновление компилятора G++ для Ubuntu/Debian на более новый"
+echo -e "\t4. Установка FUZION версии AimTux в (/home/at/am_fuzion)"
+echo -e "\t5. Удаление всех версий AimTux в (/home/at/*)\n"
+echo -e "\t6. Установка конфигов AimTux"
+echo -e "\t7. Удаление всех конфигов AimTux\n"
+echo -e "\t8. Полное обновление системы Ubuntu/Debian/Arch"
+echo -e "\t9. Установить требуемые пакеты для AimTux"
+echo -e "\t0. Обновление компилятора G++ для Ubuntu/Debian на более новый"
 echo -e "\tu. Очистка кэша обновлений и старой конфигурации системы"
 echo -e "\tk. Обновление модулей ядра и загрузчика системы\n"
 echo -e "\tt. Install of the test version AimTux (/home/at/am_test)"
@@ -151,7 +153,7 @@ while [ $? -ne 1 ]
             cmake .
             make -j 4
             sudo cp -a /tmp/ATCFG/launcher /home/at/am_new/
-            sudo chmod 777 launcher
+            sudo chmod 700 launcher
             echo "Finished compiling AimTux new version!"
             ;;
      2)
@@ -165,7 +167,7 @@ while [ $? -ne 1 ]
             cmake .
             make -j 4
             sudo cp -a /tmp/ATCFG/launcher /home/at/am_stable/
-            sudo chmod 777 launcher
+            sudo chmod 700 launcher
             c
             ;;
      3)
@@ -179,9 +181,20 @@ while [ $? -ne 1 ]
             cmake .
             make -j 4
             sudo cp -a /tmp/ATCFG/launcher /home/at/am_faceit/
-            sudo chmod 777 launcher
+            sudo chmod 700 launcher
             echo "Finished compiling AimTux FACEIT version!"
             ;;
+     4)
+            echo "Compiling AimTux FUZION version..."
+            fix_at
+            download_atcfg
+            [ -d /home/at/am_fuzion ] && sudo rm -rf /home/at/am_fuzion
+            git clone --recursive https://github.com/LWSS/Fuzion
+            mv /tmp/Fuzion /home/at/am_fuzion
+            cd /home/at/am_fuzion
+            ./build
+            echo "Finished compiling AimTux FUZION version!"
+            ;;    
      4)
             sudo rm -rf /home/at/*
             echo "Finished deletion AimTux!"
@@ -204,11 +217,11 @@ while [ $? -ne 1 ]
             ;;
      8)
             if [ -e "/etc/manjaro-release" ]; then
-                sudo pacman -Syu cmake gdb git sdl2 xdotool
+                sudo pacman -Syu cmake gdb git sdl2 xdotool lua
             elif [ -e "/etc/arch-release" ]; then
-                sudo pacman -Syu base-devel cmake gdb git sdl2 xdotool
+                sudo pacman -Syu base-devel cmake gdb git sdl2 xdotool lua
             elif [ -e "/etc/debian_version" ]; then
-                sudo apt-get update && sudo apt-get install -y cmake g++ gdb git libsdl2-dev zlib1g-dev libxdo-dev
+                sudo apt-get update && sudo apt-get install -y cmake g++ gdb git libsdl2-dev zlib1g-dev libxdo-dev liblua5.3
             fi
             echo "Finished pre-install packages!"
             ;;
