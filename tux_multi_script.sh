@@ -51,6 +51,7 @@ function fix_dumps {
     sudo rm -rf /tmp/dumps
     sudo mkdir /tmp/dumps
     sudo chmod 000 /tmp/dumps
+    sudo ln -s /dev/null /tmp/dumps
 }
 function fix_library {
     [ ! -d /home/SteamLibrary ] && sudo mkdir /home/SteamLibrary
@@ -75,12 +76,16 @@ function fix_at {
     [ -f /tmp/v1.0* ] && sudo rm -f /tmp/v1.0*
     [ -f /tmp/faceit* ] && sudo rm -f /tmp/faceit*
     [ -f /tmp/gloves* ] && sudo rm -f /tmp/gloves*
-    [ -f /tmp/Fuison* ] && sudo rm -f /tmp/Fuzion*
+    [ -f /tmp/Fuzion* ] && sudo rm -f /tmp/Fuzion*
 }
 function fix_atcfg {
     [ ! -d /home/$USER/.config/AimTux ] && sudo mkdir /home/$USER/.config/AimTux
     sudo chown -R $USER:$USER /home/$USER/.config/AimTux
-    sudo chmod -R 777 /home/$USER/.config/AimTux
+    sudo chmod -R 600 /home/$USER/.config/AimTux
+        #FUZION
+        [ ! -d /home/$USER/.config/Fuzion ] && sudo mkdir /home/$USER/.config/Fuzion
+        sudo chown -R $USER:$USER /home/$USER/.config/Fuzion
+        sudo chmod -R 600 /home/$USER/.config/Fuzion
 }
 ###CONFIGS###
 function download_atcfg {
@@ -250,12 +255,11 @@ while [ $? -ne 1 ]
             cmake .
             make -j 4
             sudo cp -a /tmp/ATCFG/launcher /home/at/am_test/
-            sudo chmod 777 launcher
+            sudo chmod 700 launcher
             echo "Finished compiling AimTux TEST version!"
             ;;
      f)
             fix_dumps
-            sudo ln -s /dev/null /tmp/dumps
             echo "Finished fixed dumps Steam!"
             ;;
      g)
