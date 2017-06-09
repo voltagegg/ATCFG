@@ -195,11 +195,11 @@ while [ $? -ne 1 ]
             ./build
             echo "Finished compiling AimTux FUZION version!"
             ;;    
-     4)
+     5)
             sudo rm -rf /home/at/*
             echo "Finished deletion AimTux!"
             ;;
-     5)
+     6)
             echo "Install Configs..."
             download_atcfg
             sudo cp -ar /tmp/ATCFG/configs/* /home/$USER/.config/AimTux/
@@ -207,15 +207,15 @@ while [ $? -ne 1 ]
             sudo cp -ar /tmp/ATCFG/kvdrrrrr_configs/* /home/$USER/.config/AimTux/
             echo "Finished install configs!"
             ;;
-     6)
+     7)
             sudo rm -rf /home/$USER/.config/AimTux/*
             echo "Finished deletion configs!"
             ;;
-     7)
+     8)
             dist_upgrade
             echo "Finished upgrade system!"
             ;;
-     8)
+     9)
             if [ -e "/etc/manjaro-release" ]; then
                 sudo pacman -Syu cmake gdb git sdl2 xdotool lua
             elif [ -e "/etc/arch-release" ]; then
@@ -225,7 +225,7 @@ while [ $? -ne 1 ]
             fi
             echo "Finished pre-install packages!"
             ;;
-     9)     
+     0)     
             sudo apt-get update
             sudo apt-get install gcc build-essential -y
             sudo add-apt-repository ppa:ubuntu-toolchain-r/test
