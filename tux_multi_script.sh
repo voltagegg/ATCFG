@@ -80,12 +80,18 @@ function fix_at {
 }
 function fix_atcfg {
     [ ! -d /home/$USER/.config/AimTux ] && sudo mkdir /home/$USER/.config/AimTux
+    [ ! -d /home/$USER/.config/AimTuxGH ] && sudo mkdir /home/$USER/.config/AimTuxGH
     sudo chown -R $USER:$USER /home/$USER/.config/AimTux
-    sudo chmod -R 600 /home/$USER/.config/AimTux
-        #FUZION
-        [ ! -d /home/$USER/.config/Fuzion ] && sudo mkdir /home/$USER/.config/Fuzion
-        sudo chown -R $USER:$USER /home/$USER/.config/Fuzion
-        sudo chmod -R 600 /home/$USER/.config/Fuzion
+    sudo chown -R $USER:$USER /home/$USER/.config/AimTuxGH
+    sudo chmod -R 700 /home/$USER/.config/AimTux
+    sudo chmod -R 700 /home/$USER/.config/AimTuxGH
+    #FUZION
+    [ ! -d /home/$USER/.config/Fuzion ] && sudo mkdir /home/$USER/.config/Fuzion
+    [ ! -d /home/$USER/.config/FuzionGH ] && sudo mkdir /home/$USER/.config/FuzionGH
+    sudo chown -R $USER:$USER /home/$USER/.config/Fuzion    
+    sudo chown -R $USER:$USER /home/$USER/.config/FuzionGH
+    sudo chmod -R 700 /home/$USER/.config/Fuzion
+    sudo chmod -R 700 /home/$USER/.config/FuzionGH
 }
 ###CONFIGS###
 function download_atcfg {
@@ -93,8 +99,8 @@ function download_atcfg {
     [ -d /tmp/ATCFG ] && sudo rm -rf ATCFG
     [ -d /tmp/atconfigs ] && sudo rm -rf atconfigs
     git clone https://github.com/voltagegg/ATCFG
-    git clone https://github.com/McSwaggens/atconfigs && mv atconfigs ATCFG/McSwaggens_configs
-    git clone https://github.com/kvdrrrrr/atconfigs && mv atconfigs ATCFG/kvdrrrrr_configs
+    #git clone https://github.com/McSwaggens/atconfigs && mv atconfigs ATCFG/McSwaggens_configs
+    #git clone https://github.com/kvdrrrrr/atconfigs && mv atconfigs ATCFG/kvdrrrrr_configs
 }
 function upload_atcfg {
     cd /tmp
@@ -150,7 +156,7 @@ while [ $? -ne 1 ]
      1)
             echo "Compiling AimTux new version..."
             fix_at
-            download_atcfg
+            #download_atcfg
             [ -d /home/at/am_new ] && sudo rm -rf /home/at/am_new            
             git clone --recursive https://github.com/AimTuxOfficial/AimTux
             mv /tmp/AimTux /home/at/am_new
@@ -164,7 +170,7 @@ while [ $? -ne 1 ]
      2)
             echo "Compiling AimTux stable version..."
             fix_at
-            download_atcfg
+            #download_atcfg
             [ -d /home/at/am_stable ] && sudo rm -rf /home/at/am_stable
             wget https://github.com/AimTuxOfficial/AimTux/archive/v1.0.zip && unzip v1.0.zip
             mv /tmp/AimTux-1.0 /home/at/am_stable
@@ -173,12 +179,12 @@ while [ $? -ne 1 ]
             make -j 4
             sudo cp -a /tmp/ATCFG/launcher /home/at/am_stable/
             sudo chmod 700 launcher
-            c
+            echo "Finished compiling AimTux stable version..."
             ;;
      3)
             echo "Compiling AimTux FACEIT version..."
             fix_at
-            download_atcfg
+            #download_atcfg
             [ -d /home/at/am_faceit ] && sudo rm -rf /home/at/am_faceit
             git clone --recursive -b faceit https://github.com/AimTuxOfficial/AimTux
             mv /tmp/AimTux /home/at/am_faceit
@@ -192,7 +198,7 @@ while [ $? -ne 1 ]
      4)
             echo "Compiling AimTux FUZION version..."
             fix_at
-            download_atcfg
+            #download_atcfg
             [ -d /home/at/am_fuzion ] && sudo rm -rf /home/at/am_fuzion
             git clone --recursive https://github.com/LWSS/Fuzion
             mv /tmp/Fuzion /home/at/am_fuzion
