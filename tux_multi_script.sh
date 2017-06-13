@@ -223,11 +223,11 @@ while [ $? -ne 1 ]
             ;;
      9)
             if [ -e "/etc/manjaro-release" ]; then
-                sudo pacman -Syu cmake gdb git sdl2 xdotool lua
+                sudo pacman -Syu cmake gdb git sdl2 xdotool lua patchelf
             elif [ -e "/etc/arch-release" ]; then
-                sudo pacman -Syu base-devel cmake gdb git sdl2 xdotool lua
+                sudo pacman -Syu base-devel cmake gdb git sdl2 xdotool lua patchelf
             elif [ -e "/etc/debian_version" ]; then
-                sudo apt-get update && sudo apt-get install -y cmake g++ gdb git libsdl2-dev zlib1g-dev libxdo-dev liblua5.3
+                sudo apt-get update && sudo apt-get install -y cmake g++ gdb git libsdl2-dev zlib1g-dev libxdo-dev liblua5.3 patchelf
             fi
             echo "Finished pre-install packages!"
             ;;
